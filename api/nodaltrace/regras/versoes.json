@@ -1,0 +1,11 @@
+{
+  "descricao": "Versões das regras de decisão dos relatórios (VERSAO_REGRAS em api/nodaltrace/dominio/conformidade.py). Cada relatório leva no cabeçalho a versão e os parâmetros dela, e a versão vai também para o registro na Solana. hash_parametros = SHA-256 do JCS (RFC 8785) dos parâmetros (dominio/relatorio.parametros_das_regras); api/tests/test_regras.py confere que os parâmetros de hoje são os da versão em vigor. Mudou um parâmetro ou a lógica de uma decisão: acrescente uma versão aqui, com o que mudou, e suba VERSAO_REGRAS. As versões antigas ficam: é por elas que se lê um relatório antigo.",
+  "versoes": [
+    {
+      "versao": "2026.1",
+      "desde": "2026-10-22",
+      "hash_parametros": "17a5c9ce843da7032a7261f8663273eda2bad31fe41aace69d9ee4dab1f0afc2",
+      "mudou": "Primeira versão registrada: situação do CAR no SICAR (pendente pede atenção; suspenso ou cancelado reprova; fora da carga mais recente, atenção), alertas do MapBiomas depois do corte da EUDR (31/12/2020; 1 ha ou mais reprova, abaixo disso atenção), bioma informativo, embargos do IBAMA (qualquer um reprova) e RenovaBio RB-01 e RB-02 pelas regras/renovabio.yaml."
+    }
+  ]
+}

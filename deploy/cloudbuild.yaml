@@ -1,0 +1,47 @@
+# Imagens da nuvem, construídas em paralelo no Cloud Build (deploy/gcp.sh imagens).
+# Substituições: _REPO (Artifact Registry), _TAG, _VITE_MAPBOX_TOKEN (token público do Mapbox, pode ficar vazio) e
+# _VITE_NT_AUTORIDADE (endereço da autoridade da credencial NODALTRACE, para a página de verificação).
+# kms-exec e attestor-base são etapas intermediárias: as outras imagens os usam no mesmo build, sem publicá-los.
+steps:
+  - id: kms-exec
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/kms-exec.Dockerfile, -t, 'nt-kms-exec:${_TAG}', .]
+    waitFor: ['-']
+  - id: attestor-base
+    name: gcr.io/cloud-builders/docker
+    args: [build, -t, 'nt-attestor-base:${_TAG}', attestor]
+    waitFor: ['-']
+  - id: attestor
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/attestor.Dockerfile, --build-arg, 'BASE=nt-attestor-base:${_TAG}', --build-arg, 'KMS_EXEC=nt-kms-exec:${_TAG}',
+           -t, '${_REPO}/attestor:${_TAG}', .]
+    waitFor: [kms-exec, attestor-base]
+  - id: api
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/api.Dockerfile, --build-arg, 'KMS_EXEC=nt-kms-exec:${_TAG}', -t, '${_REPO}/api:${_TAG}', .]
+    waitFor: [kms-exec]
+  - id: martin
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/martin.Dockerfile, -t, '${_REPO}/martin:${_TAG}', .]
+    waitFor: ['-']
+  - id: pipeline
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/pipeline.Dockerfile, -t, '${_REPO}/pipeline:${_TAG}', .]
+    waitFor: ['-']
+  - id: gateway
+    name: gcr.io/cloud-builders/docker
+    args: [build, -f, deploy/gateway.Dockerfile, --build-arg, 'VITE_MAPBOX_TOKEN=${_VITE_MAPBOX_TOKEN}',
+           --build-arg, 'VITE_NT_AUTORIDADE=${_VITE_NT_AUTORIDADE}', -t, '${_REPO}/gateway:${_TAG}', .]
+    waitFor: ['-']
+images:
+  - '${_REPO}/api:${_TAG}'
+  - '${_REPO}/attestor:${_TAG}'
+  - '${_REPO}/martin:${_TAG}'
+  - '${_REPO}/pipeline:${_TAG}'
+  - '${_REPO}/gateway:${_TAG}'
+substitutions:
+  _VITE_MAPBOX_TOKEN: ''
+  _VITE_NT_AUTORIDADE: ''
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1800s

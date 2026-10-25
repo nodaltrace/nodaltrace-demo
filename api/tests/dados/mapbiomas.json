@@ -1,0 +1,119 @@
+{
+ "ruralProperty": {
+  "PR-4103354-92624E4F77524ABC959C3D5150583448": {
+   "data": {
+    "ruralProperty": {
+     "alerts": [
+      {
+       "alertCode": 555109,
+       "detectedAt": "2022-02-28",
+       "alertImageBbox": "BOX(-53.17511000015011 -24.86054350015012,-53.166141999849884 -24.85157549984989)",
+       "publishedImages": [
+        {
+         "reference": "before",
+         "acquiredAt": "2021-04-22T13:45:10Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/556597/before_deforestation.png"
+        },
+        {
+         "reference": "after",
+         "acquiredAt": "2021-12-28T13:02:11Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/556597/after_deforestation.png"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "GO-5204805-123E98DDA6B2421AAE0FAB8CD6D08A3C": {
+   "data": {
+    "ruralProperty": {
+     "alerts": [
+      {
+       "alertCode": 965011,
+       "detectedAt": "2023-06-01",
+       "alertImageBbox": "BOX(-47.89365077609065 -17.793415565149125,-47.87675153123084 -17.77651632028931)",
+       "publishedImages": [
+        {
+         "reference": "before",
+         "acquiredAt": "2023-04-29T03:00:00Z",
+         "constellation": "Sentinel-2",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/970296/before_deforestation.png"
+        },
+        {
+         "reference": "after",
+         "acquiredAt": "2023-06-28T03:00:00Z",
+         "constellation": "Sentinel-2",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/970296/after_deforestation.png"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pointInformation": {
+  "555109": {
+   "data": {
+    "pointInformation": {
+     "alerts": [
+      {
+       "alertCode": 555109,
+       "carCodes": [
+        "PR-4103354-92624E4F77524ABC959C3D5150583448",
+        "PR-4103354-5FFD195393204D0686A8E4C944395168",
+        "9510722259590-PR",
+        "9510722347375-PR"
+       ],
+       "bbox": "-53.1798515203403,-24.864270787147777,-53.16288949055073,-24.84730875735821",
+       "publishedImages": [
+        {
+         "reference": "before",
+         "acquiredAt": "2021-04-22T13:45:10Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/556597/before_deforestation.png"
+        },
+        {
+         "reference": "after",
+         "acquiredAt": "2021-12-28T13:02:11Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/556597/after_deforestation.png"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "1291443": {
+   "data": {
+    "pointInformation": {
+     "alerts": [
+      {
+       "alertCode": 1291443,
+       "carCodes": null,
+       "bbox": "-63.017275322,-7.0331434645,-63.00618112800001,-7.022049270499998",
+       "publishedImages": [
+        {
+         "reference": "before",
+         "acquiredAt": "2024-07-12T14:49:47Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/1296728/before_deforestation.png"
+        },
+        {
+         "reference": "after",
+         "acquiredAt": "2024-10-02T13:55:30Z",
+         "constellation": "PlanetScope",
+         "url": "https://image.alerta.mapbiomas.org/image/alert/1296728/after_deforestation.png"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,31 @@
+node_modules
+dist
+*.local
+.DS_Store
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Bases brutas (SICAR, MapBiomas) baixadas: grandes demais para o Git.
+# Tudo em /dados fica fora do Git, menos o README que descreve o conteúdo esperado.
+/dados/*
+!/dados/README.md
+db/*/
+!db/nt_db/
+*.tsbuildinfo
+# Cache do Vite (fica na raiz quando o Vite roda fora de web/).
+.vite/
+
+# Última tag das imagens e modo do serviço na nuvem (deploy/gcp.sh).
+deploy/.tag
+deploy/.modo
+
+# Cofres de chaves da Solana (cifrados, mas fora do Git mesmo assim). Ver README.pt-BR.md, "Atestação na Solana (devnet)".
+/attestor/chaves/
+
+# Ajustes locais do Compose (memória do PostGIS, portas). Ver README.pt-BR.md, "Configuração".
+docker-compose.override.yml
+
+# Banco reduzido da demo (deploy/demo/reduzir.sh): grande demais para o Git.
+deploy/demo/*.dump

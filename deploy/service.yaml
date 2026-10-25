@@ -1,0 +1,140 @@
+# Serviço do Cloud Run: o docker-compose sem o banco, numa instância só. Aplicado por `deploy/gcp.sh servico`, que
+# preenche as variáveis ${...} (envsubst) e chama `gcloud run services replace`.
+#
+# No máximo uma instância, com CPU sempre alocada: todos os contêineres (gateway, API, Martin, attestor) dividem
+# esta instância. Modos: ver `teste` e `producao` em deploy/gcp.sh.
+#
+# Atestação na Solana (devnet): o attestor roda aqui também, como no perfil `solana` do Compose, e fala pelo
+# localhost. A chave do atestador e o segredo HMAC ficam no Secret Manager cifrados pelo Cloud KMS (deploy/gcp.sh
+# solana); o kms-exec de cada imagem os decifra na subida com a conta de serviço. Sem senha guardada. O attestor não tem
+# sonda nem entra em container-dependencies: se falhar, o resto da instância sobe e a atestação fica indisponível.
+#
+# Imagens históricas: o bucket ${BUCKET_IMAGENS} montado em /imagens só na API (Cloud Storage FUSE), onde ela guarda
+# os recortes do INPE (api/nodaltrace/servicos/imagens.py). A montagem exige o ambiente de execução gen2.
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ${SERVICO}
+  labels:
+    cloud.googleapis.com/location: ${REGIAO}
+  annotations:
+    # Produção: só o balanceador (com o IAP) alcança o serviço. Teste: `all`, mas só para quem tem papel no projeto.
+    run.googleapis.com/ingress: ${INGRESSO}
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: '${MIN_INSTANCIAS}'
+        autoscaling.knative.dev/maxScale: '1'
+        run.googleapis.com/cpu-throttling: 'false'
+        run.googleapis.com/startup-cpu-boost: 'true'
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/container-dependencies: '{"gateway":["api","martin"],"api":["cloud-sql-proxy"],"martin":["cloud-sql-proxy"]}'
+    spec:
+      serviceAccountName: ${CONTA_SERVICO}
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      volumes:
+        - name: imagens
+          csi:
+            driver: gcsfuse.run.googleapis.com
+            readOnly: false
+            volumeAttributes:
+              bucketName: ${BUCKET_IMAGENS}
+      containers:
+        - name: gateway
+          image: ${REPO}/gateway:${TAG}
+          ports:
+            - containerPort: 8080
+          resources:
+            limits: { cpu: '0.5', memory: 256Mi }
+
+        - name: api
+          image: ${REPO}/api:${TAG}
+          env:
+            - name: DATABASE_URL
+              valueFrom: { secretKeyRef: { name: nt-database-url, key: latest } }
+            # Atestação na Solana: o attestor no localhost. O segredo HMAC chega cifrado e o kms-exec o decifra na
+            # subida; se falhar, a API sobe sem a atestação (NT_KMS_FALHA=seguir).
+            - name: NT_ATTESTOR_URL
+              value: http://127.0.0.1:8790
+            - name: NT_ATTESTOR_SEGREDO_KMS
+              valueFrom: { secretKeyRef: { name: nt-solana-attestor-segredo, key: latest } }
+            - name: NT_AUTORIDADE
+              valueFrom: { secretKeyRef: { name: nt-solana-autoridade, key: latest } }
+            - name: NT_SOLANA_CLUSTER
+              value: devnet
+            - name: NT_SOLANA_RPC
+              value: '${SOLANA_RPC}'
+            - name: NT_KMS_CHAVE
+              value: '${KMS_CHAVE}'
+            - name: NT_KMS_FALHA
+              value: seguir
+            # Recortes das imagens históricas no bucket montado (o FUSE usa até ~64 MiB por arquivo em gravação,
+            # dentro dos 2Gi).
+            - name: NT_IMAGENS_DIR
+              value: /imagens
+          volumeMounts:
+            - name: imagens
+              mountPath: /imagens
+          resources:
+            limits: { cpu: '1', memory: 2Gi }
+          startupProbe:
+            tcpSocket: { port: 8000 }
+            periodSeconds: 2
+            failureThreshold: 60
+
+        - name: martin
+          image: ${REPO}/martin:${TAG}
+          env:
+            - name: DATABASE_URL
+              valueFrom: { secretKeyRef: { name: nt-database-url, key: latest } }
+          resources:
+            limits: { cpu: '0.5', memory: 1Gi }
+          startupProbe:
+            httpGet: { path: /health, port: 3000 }
+            periodSeconds: 2
+            failureThreshold: 60
+
+        # Conexão com o Cloud SQL em 127.0.0.1:5432 para a API e o Martin, sem VPC nem IP liberado.
+        - name: cloud-sql-proxy
+          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.25.4
+          args:
+            - --address=127.0.0.1
+            - --port=5432
+            - --health-check
+            - --http-address=0.0.0.0
+            - --http-port=9090
+            - --structured-logs
+            - ${CONEXAO_SQL}
+          resources:
+            limits: { cpu: '0.5', memory: 256Mi }
+          startupProbe:
+            httpGet: { path: /startup, port: 9090 }
+            periodSeconds: 1
+            failureThreshold: 60
+
+        # Assina e envia as atestações (attestor/, CONTRATO.md §5). Só a API o chama, com HMAC.
+        - name: attestor
+          image: ${REPO}/attestor:${TAG}
+          env:
+            - name: PORT
+              value: '8790'
+            - name: NT_SOLANA_CLUSTER
+              value: devnet
+            - name: NT_SOLANA_RPC
+              value: '${SOLANA_RPC}'
+            - name: NT_AUTORIDADE
+              valueFrom: { secretKeyRef: { name: nt-solana-autoridade, key: latest } }
+            - name: NT_SALDO_MINIMO_LAMPORTS
+              value: '50000000'
+            - name: NT_CHAVE_ATESTADOR_KMS
+              valueFrom: { secretKeyRef: { name: nt-solana-atestador, key: latest } }
+            - name: NT_ATTESTOR_SEGREDO_KMS
+              valueFrom: { secretKeyRef: { name: nt-solana-attestor-segredo, key: latest } }
+            - name: NT_KMS_CHAVE
+              value: '${KMS_CHAVE}'
+            - name: NT_KMS_EXIGIR
+              value: NT_CHAVE_ATESTADOR NT_ATTESTOR_SEGREDO
+          resources:
+            limits: { cpu: '0.25', memory: 512Mi }

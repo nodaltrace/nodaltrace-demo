@@ -1,0 +1,5 @@
+node_modules
+dist
+chaves
+test
+*.md

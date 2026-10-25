@@ -1,0 +1,28 @@
+{
+  "name": "nodaltrace-attestor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --exclude 'test/**/*.integracao.test.ts'",
+    "test:integracao": "vitest run test/surfpool.integracao.test.ts",
+    "setup": "node dist/setup.js",
+    "cli": "node dist/cli.js",
+    "start": "node dist/servidor.js"
+  },
+  "dependencies": {
+    "@solana/attestation": "2.1.0",
+    "@solana/kit": "8.4.0"
+  },
+  "devDependencies": {
+    "@solana/surfpool": "1.6.0",
+    "@types/node": "22.19.1",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  }
+}

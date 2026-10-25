@@ -1,0 +1,2 @@
+# Dependência direta da pipeline (a imagem do GDAL traz o resto). A trava é requirements.txt, gerada pelo `./run.sh deps`.
+psycopg[binary]>=3.3.6,<4

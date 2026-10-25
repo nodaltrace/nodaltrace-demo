@@ -1,0 +1,33 @@
+# Servidor de vector tiles a partir do PostGIS. As fontes são as funções de tile do schema ref (definição atual em
+# db/027_tiles_mais_leves.sql).
+listen_addresses: '0.0.0.0:3000'
+cache_size_mb: 512
+postgres:
+  connection_string: '${DATABASE_URL}'
+  # Conexões simultâneas com o banco (padrão do Martin: 20). Cada tile é trabalho de CPU no PostGIS: no Cloud SQL de 2 vCPU,
+  # 20 ao mesmo tempo só disputam a CPU entre si e com a API, que divide o mesmo banco.
+  pool_size: 6
+  auto_publish: false
+  functions:
+    # Demo do hackathon: CAR a partir do zoom 8 (deploy/demo/032_demo_car_desde_zoom_8.sql).
+    car:
+      schema: ref
+      function: car_tiles
+      minzoom: 8
+      maxzoom: 16
+    alerta:
+      schema: ref
+      function: alerta_tiles
+      # Alertas a partir do zoom 5 (o mapa do Brasil inteiro fica sem eles; ver AFASTADO em web/src/map/escalaVista.ts).
+      minzoom: 5
+      maxzoom: 16
+    bioma:
+      schema: ref
+      function: bioma_tiles
+      minzoom: 0
+      maxzoom: 16
+    car_alerta:
+      schema: ref
+      function: car_alerta_tiles
+      minzoom: 8
+      maxzoom: 16

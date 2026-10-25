@@ -1,0 +1,10 @@
+# Os mesmos bytes no Linux, no macOS e no Windows. Sem isto, o Git do Windows (core.autocrlf) troca LF por CRLF no
+# checkout e quebra o run.sh, os Dockerfiles e tudo o que roda nos contêineres ($'\r': command not found).
+* text=auto eol=lf
+
+# Modelos do cadastro: CRLF e BOM de propósito (abrem direto no Excel); o teste da API os compara byte a byte.
+*.csv -text
+
+*.png binary
+*.ico binary
+*.ttf binary

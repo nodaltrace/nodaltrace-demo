@@ -1,0 +1,23 @@
+[project]
+name = "nodaltrace-api"
+version = "0.1.0"
+description = "API da NodalTrace: imóveis do CAR, conformidade, imagens e relatórios"
+requires-python = ">=3.12"
+# Faixas que o `./run.sh deps` respeita ao regerar as travas (requirements.txt e requirements-dev.txt, com hash): as
+# imagens instalam só as travas, então reconstruir uma imagem nunca troca versão. Pacotes 0.x só aceitam correção (~=).
+dependencies = [
+  "fastapi~=0.158.1",
+  "uvicorn[standard]~=0.54.0",
+  "psycopg[binary,pool]>=3.3.6,<4",
+  "reportlab>=5.0.1,<6",
+  "pyyaml>=6.0.3,<7",
+  "rfc8785==0.1.4",
+  "rio-tiler>=9.4.12,<10",
+]
+
+[project.optional-dependencies]
+teste = ["pytest>=9.1.1,<10", "httpx~=0.28.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

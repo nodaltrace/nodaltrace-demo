@@ -1,0 +1,82 @@
+# Demo no Railway: as rotas de deploy/nginx.conf, com a API e o Martin em outros serviços da rede privada. O nginx
+# resolve os nomes a cada pedido (resolver + proxy_pass com variável): o IP de um serviço muda a cada deploy, e um nome
+# que ainda não existe na subida derrubaria o nginx. ${API_HOST}, ${MARTIN_HOST} e ${NGINX_LOCAL_RESOLVERS} vêm do
+# entrypoint da imagem (deploy/demo/gateway.Dockerfile).
+
+map $arg_v $cache_tiles {
+    ''      'no-cache';
+    default 'public, max-age=31536000, immutable';
+}
+
+# Emitir um relatório gasta SOL da devnet e grava no banco: no máximo 6 por minuto por cliente (o primeiro IP do
+# X-Forwarded-For, que o proxy do Railway preenche). Só o POST conta: a lista de relatórios é o mesmo endereço.
+map $http_x_forwarded_for $cliente {
+    ~^(?<ip>[^,\s]+) $ip;
+    default          $remote_addr;
+}
+map $request_method $emissao {
+    POST    $cliente;
+    default '';
+}
+limit_req_zone $emissao zone=emissao:1m rate=6r/m;
+
+server {
+    listen 8080;
+    listen [::]:8080;
+    root /usr/share/nginx/html;
+    # Só IPv4: a API e o Martin escutam em 0.0.0.0; projeto novo no Railway tem rede privada com IPv4 e IPv6.
+    resolver ${NGINX_LOCAL_RESOLVERS} valid=10s ipv6=off;
+
+    client_max_body_size 1m;
+
+    gzip on;
+    gzip_proxied any;
+    gzip_comp_level 5;
+    gzip_vary on;
+    gzip_types application/json application/javascript text/css image/svg+xml application/geo+json font/ttf application/x-protobuf;
+
+    set $api http://${API_HOST}:8000;
+    set $martin http://${MARTIN_HOST}:3000;
+
+    location = /api/relatorios {
+        limit_req zone=emissao burst=3 nodelay;
+        limit_req_status 429;
+        rewrite ^/api/(.*)$ /$1 break;
+        proxy_pass $api;
+        proxy_read_timeout 300s;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location /api/ {
+        rewrite ^/api/(.*)$ /$1 break;
+        proxy_pass $api;
+        proxy_read_timeout 300s;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location /tiles/ {
+        rewrite ^/tiles/(.*)$ /$1 break;
+        proxy_pass $martin;
+        proxy_set_header Host $host;
+        add_header Cache-Control $cache_tiles always;
+    }
+
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        try_files $uri =404;
+    }
+
+    location ~ ^/(geo|brand)/ {
+        add_header Cache-Control "public, max-age=604800";
+        try_files $uri =404;
+    }
+
+    location / {
+        add_header Cache-Control "no-cache";
+        try_files $uri $uri/ /index.html;
+    }
+}

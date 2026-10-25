@@ -1,0 +1,247 @@
+# RenovaBio eligibility rules - summary for compliance engine
+# Compiled 2026-10-07.
+#
+# SOURCE STATUS (read before relying on this file)
+# - Governing act: Resolucao ANP 984/2025 (16 Jun 2025), which fully revoked 758/2018.
+# - Operational detail below comes from Informe Tecnico 02/SBQ v.6, read as a
+#   DRAFT FOR CONSULTATION. Confirm against the final published version.
+# - Article numbers are inconsistent between sources (the draft informe cites
+#   arts. 27/28/29 for the three criteria; the resolution's definitions cite
+#   arts. 28-30). Treat `legal_ref` values as unverified.
+# - Only two of the three property criteria are here: palm agroecological
+#   zoning (ZAE Palma de Oleo, Decreto 7.172/2010) is out of scope, so oil palm
+#   is not checked against it.
+# - EUDR section mixes confirmed 2026 facts with base-regulation detail recalled
+#   from the Commission FAQ; verify against current Annex I and FAQ.
+
+meta:
+  # Versão do conjunto de regras: vai para o relatório junto com o SHA-256 deste arquivo.
+  version: "2026-10-09"
+  status: draft                             # informe técnico ainda em consulta (ver SOURCE STATUS)
+  # O SOURCE STATUS acima, como dado: o relatório e o painel citam as fontes e as ressalvas.
+  sources:
+    governing_act: "ANP Resolution 984/2025 (Jun 16, 2025), which revoked Resolution 758/2018"
+    operational_detail: "Technical Note 02/SBQ v.6 (Informe Técnico), read as a draft under public consultation"
+    legal_refs_verified: false
+  regime: RenovaBio
+  jurisdiction: BR
+  regulator: ANP
+  unit_of_assessment: rural_property        # identified by CAR number
+  unit_of_aggregation: biofuel_production_unit
+  participation: voluntary                  # outcome is the right to issue CBIOs
+  record_retention_years_min: 5
+
+# ---------------------------------------------------------------------------
+# 1. REQUIRED INPUT DATA
+# ---------------------------------------------------------------------------
+inputs:
+  per_property:
+    - {field: producer_name, required: true}
+    - {field: producer_tax_id, required: true, note: CNPJ or CPF}
+    - {field: producer_has_ineligible_car, required: true, type: boolean}
+    - {field: car_number, required: true, on_missing: INELIGIBLE}
+    - {field: car_status, required: true, enum: [ATIVO, PENDENTE, CANCELADO, EXCLUIDO, SUSPENSO]}
+    - {field: municipality, required: true, on_missing: INELIGIBLE}
+    - {field: biomass_qty_acquired_t, required: true}
+    - {field: property_area_ha, required: true, note: area registered in CAR}
+    - {field: origin, required: true, enum: [national, foreign]}
+    - {field: biomass_type, required: true}
+    - {field: is_residue, required: true, type: boolean}
+  per_producer:
+    - {field: total_qty_acquired_t, evidence: purchase invoice}
+    - {field: agricultural_profile, enum: [primary, penalized]}
+    - note: >
+        If at least one property of a producer is eligible, the production
+        profile must be reported for ALL of that producer's properties.
+        Missing any mandatory-primary parameter makes the producer non-eligible.
+  per_unit:
+    - {field: total_biomass_processed_t, note: all biomass, eligible or not}
+    - {field: route, enum: [E1GC, E1GM, E1GMI, E1GFlex, E1G2G, E2G, biodiesel, biomethane, alt_fuels]}
+
+# ---------------------------------------------------------------------------
+# 2. ELIGIBILITY RULES (all applicable rules must pass per property)
+# ---------------------------------------------------------------------------
+rules:
+  - id: RB-01
+    name: no_native_vegetation_suppression
+    legal_ref: "RANP 984/2025 (art. 27 per the draft Technical Note)"
+    applies_when:
+      origin: [national, foreign]
+      is_residue: false
+    crops: [sugarcane, corn, sorghum, oil_palm, soy, cotton, other_oilseeds]
+    condition: >
+      No suppression of native vegetation in the area dedicated to energy
+      biomass production since the cut-off date.
+    cutoff_date: 2018-11-27
+    spatial_scope: area_dedicated_to_energy_biomass   # not other land uses on the property
+    exceptions:
+      - isolated_tree_removal_is_not_suppression
+    transitional_window:
+      from: 2017-12-26          # promulgation of Lei 13.576/2017
+      to: 2018-11-27
+      condition: suppression in this window must have complied with environmental law
+      evidence: suppression authorization or equivalent legality proof
+    native_vegetation_classes: [FNM, FM, FSec, GNM, GM, GSec]   # forest AND grassland, primary and secondary
+    evidence:
+      method: satellite_image_comparison
+      spatial_resolution_m_max: 30
+      recommended_sensors: [Landsat-8, Sentinel-2]
+      comparisons_required:
+        - {before: 2018-11-27, after: end_of_base_period}
+        - {before: 2017-12-24, after: 2018-11-27}
+      single_comparison_allowed: "before 2017-12-24 to after end of base period, if no suppression found"
+      image_metadata_required: [satellite, sensor, date, orbit_point, rms_error]
+      rms_error_max: {pixels: 0.5, landsat8_m: 15, landsat8_level: L1TP, sentinel2_m: 10}
+      documents:
+        - signed_analysis_report        # laudo
+        - declaration_of_technical_competence
+      constraints:
+        - automated_only_analysis_not_accepted
+        - report_must_be_signed_by_technical_responsible
+        - inspector_analyst_must_differ_from_producer_analyst
+      if_inconclusive: [acquire_higher_resolution_imagery, on_site_inspection]
+    on_fail: PROPERTY_INELIGIBLE
+
+  - id: RB-02
+    name: car_active_or_pending
+    legal_ref: "RANP 984/2025 (art. 28 per the draft Technical Note)"
+    applies_when:
+      origin: [national]
+      is_residue: false
+    condition: car_status in [ATIVO, PENDENTE]
+    reference_date: "31 Dec of each base year"
+    timing_rule: >
+      If CAR is regularized during a calendar year, biomass acquired in that
+      whole calendar year is eligible; prior years remain ineligible.
+    cancelled_or_excluded_car: >
+      May be declared only with dated proof that status was ATIVO or PENDENTE
+      up to 31 Dec of the base year claimed.
+    evidence:
+      accepted:
+        - sicar_statement_with_query_date_or_last_status_change_date
+        - official_letter_from_servico_florestal_brasileiro
+    on_fail: PROPERTY_INELIGIBLE
+
+exemptions:
+  - {scope: residue_biomass, exempt_from: [RB-01, RB-02]}
+  - {scope: routes, routes: [E2G, biomethane], effect: "no agricultural phase; eligible fraction = 100%"}
+  - {scope: foreign_producers, exempt_from: [RB-02]}
+
+definitions:
+  eligible_producer: producer with at least one property passing all applicable rules
+  rural_property_national: perimeter registered in CAR (Lei 12.651/2012)
+  rural_property_foreign: perimeter recognized by an official body of the country, where one exists
+
+# ---------------------------------------------------------------------------
+# 3. MIXED LOTS - RenovaBio uses proportional accounting, not segregation
+# ---------------------------------------------------------------------------
+mixing_model:
+  type: mass_balance
+  physical_segregation_required: false
+  effect_of_ineligible_biomass: reduces eligible volume fraction proportionally; does not invalidate the lot
+  calculations:
+    - id: CALC-01
+      name: per_property_quantity_when_not_separately_provable
+      formula: "Q_property = (Q_total_producer / A_total_producer) * A_property"
+      note: mandatory method when per-CAR quantity cannot be proven; no alternative allowed
+    - id: CALC-02
+      name: eligible_volume_fraction_single_feedstock
+      routes: [E1GC, E1GM]
+      formula: "f_eligible = Q_eligible / Q_total_processed"
+      note: applies equally to anhydrous and hydrated ethanol, regardless of sugar/ethanol mix
+    - id: CALC-03
+      name: eligible_volume_multi_feedstock
+      routes: [biodiesel]
+      formula: "V_eligible = sum_i(mass_i * elig_i * yield_i) / density_biofuel"
+    - id: CALC-04
+      name: eligible_fraction_two_feedstocks_two_fuels
+      routes: [E1GFlex]
+      formula: "f_eligible = (f_cane*E_cane + f_corn*E_corn) / (E_cane + E_corn)"
+      note: energy basis; E = volume * PCI * density * 1000 per fuel
+    - id: CALC-05
+      name: e1g2g
+      note: requires balance between 1G and 2G ethanol, including eligible share of 2G feedstock
+    - id: CALC-06
+      name: cbio_emission_factor
+      formula: "f = NEEA * (f_eligible/100) * density * PCI * 1e-6"
+      units: {NEEA: gCO2eq/MJ, f_eligible: "%", density: t/m3, PCI: MJ/kg}
+      note: 1 CBIO = 1 tCO2eq
+  third_party_oils:
+    required_per_extraction_plant:
+      - qty_acquired_from_plant
+      - total_feedstock_processed
+      - eligible_feedstock_processed
+      - traceable_link_plant_to_declared_rural_properties
+  audit:
+    - fraction calculation log must be documented by producer and audited by inspection firm
+    - final report must describe mass-balance verification and chain-of-custody traceability checks
+
+# ---------------------------------------------------------------------------
+# 4. PROCESS AND AUDIT CONTROLS
+# ---------------------------------------------------------------------------
+process_controls:
+  inspection_firm:
+    must_be_anp_accredited: true
+    conflict_of_interest_lookback_years: 2
+    rotation: different firm required after two consecutive certificates by the same firm
+    lead_auditor: may not lead three consecutive certifications of the same unit
+    may_not: fill in RenovaCalc or compute eligible fraction for the producer
+  on_site_audit: mandatory
+  public_consultation:
+    min_days: 30
+    notice_to_anp_business_days_before: 5
+    requires_anp_consent_to_start: true
+  sampling:
+    allowed: true
+    mandatory_full_audit: top_10_biomass_suppliers_by_quantity
+    statistical_limits: {margin_of_error_max_pct: 10, confidence_min_pct: 95}
+    exclude_from_universe: [ineligible_producers, eligible_producers_with_zero_supply]
+    max_sampling_rounds: 2
+    after_second_failure: only producers actually verified count as eligible
+  deliverables_to_anp:
+    - on_site_audit_report_with_attendance_list
+    - public_consultation_report
+    - sampling_plan
+    - renovacalc_calculation_log
+    - eligible_volume_fraction_calculation_log
+    - inspector_eligibility_report_with_images_of_top_10_suppliers
+    - producer_eligibility_declaration
+    - responsibility_and_conflict_of_interest_terms
+  cross_checks:
+    - production and yield figures must match data reported in ANP SIMP
+    - producer must hold valid ANP authorization and regular CNPJ throughout the process
+
+# ---------------------------------------------------------------------------
+# 5. EUDR CROSS-REFERENCE (for dual-compliance flags only)
+# ---------------------------------------------------------------------------
+eudr_delta:
+  status: "applies 2026-12-30 (medium/large), 2027-06-30 (micro/small)"
+  brazil_risk_class: standard
+  commodity_overlap_with_renovabio: [soy, oil_palm]
+  not_covered_by_eudr: [sugarcane, corn]
+  differences:
+    - {topic: cutoff_date, renovabio: 2018-11-27, eudr: 2020-12-31}
+    - {topic: protected_cover, renovabio: all native vegetation incl. grassland, eudr: forest only (FAO definition)}
+    - {topic: legality, renovabio: CAR status only, eudr: full compliance with law of country of production}
+    - {topic: geolocation, renovabio: CAR perimeter, eudr: "plot polygons >4 ha, point <=4 ha"}
+    - {topic: mixing, renovabio: mass balance allowed, eudr: mass balance prohibited; segregation at every step}
+    - {topic: contamination, renovabio: reduces eligible fraction, eudr: whole lot non-compliant if not separable}
+    - {topic: verification, renovabio: prior third-party audit + ANP approval, eudr: operator due diligence statement + authority checks}
+  flags:
+    - id: X-01
+      when: RB-01 passes
+      note: imagery evidence is reusable for EUDR deforestation check; still needs plot polygons and legality evidence
+    - id: X-02
+      when: forest suppression between 2018-11-28 and 2020-12-31
+      result: {renovabio: INELIGIBLE, eudr: may be compliant}
+    - id: X-03
+      when: non-forest native vegetation converted after 2020-12-31
+      result: {renovabio: INELIGIBLE, eudr: outside deforestation definition}
+    - id: X-04
+      when: unit operates mass balance with any ineligible or unknown-origin input
+      result: {renovabio: OK with reduced fraction, eudr: output from shared silo/line non-compliant}
+
+outcomes:
+  property: [ELIGIBLE, INELIGIBLE]
+  producer: [ELIGIBLE, NON_ELIGIBLE]
+  unit: eligible_volume_fraction_pct

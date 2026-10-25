@@ -1,0 +1,1642 @@
+{
+ "type": "FeatureCollection",
+ "links": [],
+ "context": {
+  "matched": 32,
+  "returned": 32
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20260401_20260630_P20260106",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-04-01T00:00:00.000000Z",
+    "start_datetime": "2026-04-01T00:00:00.000000Z",
+    "end_datetime": "2026-06-30T23:59:59.000000Z",
+    "created": "2026-09-16T21:16:48.949393Z",
+    "updated": "2026-09-16T21:16:48.915913Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2026/MOSAIC-S2-BRAZIL-3M_V1_20260401_20260630_P20260106_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20260101_20260331_P20260106",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-01-01T00:00:00.000000Z",
+    "start_datetime": "2026-01-01T00:00:00.000000Z",
+    "end_datetime": "2026-03-31T23:59:59.000000Z",
+    "created": "2026-09-16T20:41:47.793517Z",
+    "updated": "2026-09-16T20:41:47.755861Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2026/MOSAIC-S2-BRAZIL-3M_V1_20260101_20260331_P20260106_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20251001_20251231_P20260120",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-10-01T00:00:00.000000Z",
+    "start_datetime": "2025-10-01T00:00:00.000000Z",
+    "end_datetime": "2025-12-31T23:59:59.000000Z",
+    "created": "2026-01-27T12:02:51.637594Z",
+    "updated": "2026-01-27T12:02:51.624323Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2025/MOSAIC-S2-BRAZIL-3M_V1_20251001_20251231_P20260120_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20250701_20250930_P20250916",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-07-01T00:00:00.000000Z",
+    "start_datetime": "2025-07-01T00:00:00.000000Z",
+    "end_datetime": "2025-09-30T23:59:59.000000Z",
+    "created": "2025-11-12T15:03:21.243315Z",
+    "updated": "2025-11-12T15:03:21.221868Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2025/MOSAIC-S2-BRAZIL-3M_V1_20250701_20250930_P20250916_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20250401_20250630_P20250922",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-04-01T00:00:00.000000Z",
+    "start_datetime": "2025-04-01T00:00:00.000000Z",
+    "end_datetime": "2025-06-30T23:59:59.000000Z",
+    "created": "2025-09-25T14:55:36.020433Z",
+    "updated": "2025-09-25T14:55:36.008779Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2025/MOSAIC-S2-BRAZIL-3M_V1_20250401_20250630_P20250922_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20250101_20250331_P20251130",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-01-01T00:00:00.000000Z",
+    "start_datetime": "2025-01-01T00:00:00.000000Z",
+    "end_datetime": "2025-03-31T23:59:59.000000Z",
+    "created": "2026-01-14T20:28:34.864762Z",
+    "updated": "2026-01-14T20:28:34.841536Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2025/MOSAIC-S2-BRAZIL-3M_V1_20250101_20250331_P20251130_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20241001_20241231_P20250916",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-10-01T00:00:00.000000Z",
+    "start_datetime": "2024-10-01T00:00:00.000000Z",
+    "end_datetime": "2024-12-31T23:59:59.000000Z",
+    "created": "2025-10-29T16:45:11.197148Z",
+    "updated": "2025-10-29T16:45:11.139470Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2024/MOSAIC-S2-BRAZIL-3M_V1_20241001_20241231_P20250916_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20240401_20240630_P20250921",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-04-01T00:00:00.000000Z",
+    "start_datetime": "2024-04-01T00:00:00.000000Z",
+    "end_datetime": "2024-06-30T23:59:59.000000Z",
+    "created": "2025-09-25T14:16:25.360376Z",
+    "updated": "2025-09-25T14:16:25.343387Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2024/MOSAIC-S2-BRAZIL-3M_V1_20240401_20240630_P20250921_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20240101_20240331_P20250903",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-01-01T00:00:00.000000Z",
+    "start_datetime": "2024-01-01T00:00:00.000000Z",
+    "end_datetime": "2024-03-31T23:59:59.000000Z",
+    "created": "2025-09-25T13:52:13.797343Z",
+    "updated": "2025-09-25T13:52:13.768948Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2024/MOSAIC-S2-BRAZIL-3M_V1_20240101_20240331_P20250903_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20231001_20231231_P20250916",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-10-01T00:00:00.000000Z",
+    "start_datetime": "2023-10-01T00:00:00.000000Z",
+    "end_datetime": "2023-12-31T23:59:59.000000Z",
+    "created": "2025-10-29T18:40:32.482987Z",
+    "updated": "2025-10-29T18:40:32.469903Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2023/MOSAIC-S2-BRAZIL-3M_V1_20231001_20231231_P20250916_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20230701_20230930_P20251126",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-07-01T00:00:00.000000Z",
+    "start_datetime": "2023-07-01T00:00:00.000000Z",
+    "end_datetime": "2023-09-30T23:59:59.000000Z",
+    "created": "2025-11-28T17:55:54.888206Z",
+    "updated": "2025-11-28T17:55:54.845864Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2023/MOSAIC-S2-BRAZIL-3M_V1_20230701_20230930_P20251126_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20230401_20230630_P20251126",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-04-01T00:00:00.000000Z",
+    "start_datetime": "2023-04-01T00:00:00.000000Z",
+    "end_datetime": "2023-06-30T23:59:59.000000Z",
+    "created": "2025-11-28T18:44:39.393528Z",
+    "updated": "2025-11-28T18:44:39.378630Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2023/MOSAIC-S2-BRAZIL-3M_V1_20230401_20230630_P20251126_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20230101_20230331_P20260325",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-01-01T00:00:00.000000Z",
+    "start_datetime": "2023-01-01T00:00:00.000000Z",
+    "end_datetime": "2023-03-31T23:59:59.000000Z",
+    "created": "2026-04-27T18:59:59.678292Z",
+    "updated": "2026-04-27T18:59:59.660874Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2023/MOSAIC-S2-BRAZIL-3M_V1_20230101_20230331_P20260325_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20221001_20221231_P20250916",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2022-10-01T00:00:00.000000Z",
+    "start_datetime": "2022-10-01T00:00:00.000000Z",
+    "end_datetime": "2022-12-31T23:59:59.000000Z",
+    "created": "2025-10-29T19:39:45.477656Z",
+    "updated": "2025-10-29T19:39:45.458507Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2022/MOSAIC-S2-BRAZIL-3M_V1_20221001_20221231_P20250916_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20220701_20220930_P20251206",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2022-07-01T00:00:00.000000Z",
+    "start_datetime": "2022-07-01T00:00:00.000000Z",
+    "end_datetime": "2022-09-30T23:59:59.000000Z",
+    "created": "2026-01-14T21:17:12.035004Z",
+    "updated": "2026-01-14T21:17:12.018712Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2022/MOSAIC-S2-BRAZIL-3M_V1_20220701_20220930_P20251206_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20220401_20220630_P20251206",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2022-04-01T00:00:00.000000Z",
+    "start_datetime": "2022-04-01T00:00:00.000000Z",
+    "end_datetime": "2022-06-30T23:59:59.000000Z",
+    "created": "2026-01-14T22:03:02.606054Z",
+    "updated": "2026-01-14T22:03:02.589184Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2022/MOSAIC-S2-BRAZIL-3M_V1_20220401_20220630_P20251206_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20220101_20220331_P20251216",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2022-01-01T00:00:00.000000Z",
+    "start_datetime": "2022-01-01T00:00:00.000000Z",
+    "end_datetime": "2022-03-31T23:59:59.000000Z",
+    "created": "2026-01-14T22:52:54.594877Z",
+    "updated": "2026-01-14T22:52:54.580765Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2022/MOSAIC-S2-BRAZIL-3M_V1_20220101_20220331_P20251216_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20211001_20211231_P20251027",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2021-10-01T00:00:00.000000Z",
+    "start_datetime": "2021-10-01T00:00:00.000000Z",
+    "end_datetime": "2021-12-31T23:59:59.000000Z",
+    "created": "2025-10-29T21:35:15.418475Z",
+    "updated": "2025-10-29T21:35:15.392856Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2021/MOSAIC-S2-BRAZIL-3M_V1_20211001_20211231_P20251027_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20210701_20210930_P20251216",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2021-07-01T00:00:00.000000Z",
+    "start_datetime": "2021-07-01T00:00:00.000000Z",
+    "end_datetime": "2021-09-30T23:59:59.000000Z",
+    "created": "2026-01-15T00:50:43.326804Z",
+    "updated": "2026-01-15T00:50:43.312162Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2021/MOSAIC-S2-BRAZIL-3M_V1_20210701_20210930_P20251216_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20210401_20210630_P20250916",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2021-04-01T00:00:00.000000Z",
+    "start_datetime": "2021-04-01T00:00:00.000000Z",
+    "end_datetime": "2021-06-30T23:59:59.000000Z",
+    "created": "2026-01-15T01:39:49.617848Z",
+    "updated": "2026-01-15T01:39:49.602728Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2021/MOSAIC-S2-BRAZIL-3M_V1_20210401_20210630_P20250916_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20210101_20210331_P20251224",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2021-01-01T00:00:00.000000Z",
+    "start_datetime": "2021-01-01T00:00:00.000000Z",
+    "end_datetime": "2021-03-31T23:59:59.000000Z",
+    "created": "2026-01-15T02:34:59.823647Z",
+    "updated": "2026-01-15T02:34:59.809507Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2021/MOSAIC-S2-BRAZIL-3M_V1_20210101_20210331_P20251224_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20201001_20201231_P20251027",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2020-10-01T00:00:00.000000Z",
+    "start_datetime": "2020-10-01T00:00:00.000000Z",
+    "end_datetime": "2020-12-31T23:59:59.000000Z",
+    "created": "2025-10-29T20:36:19.268599Z",
+    "updated": "2025-10-29T20:36:19.250024Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2020/MOSAIC-S2-BRAZIL-3M_V1_20201001_20201231_P20251027_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20200701_20200930_P20260106",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2020-07-01T00:00:00.000000Z",
+    "start_datetime": "2020-07-01T00:00:00.000000Z",
+    "end_datetime": "2020-09-30T23:59:59.000000Z",
+    "created": "2026-01-14T23:28:10.997425Z",
+    "updated": "2026-01-14T23:28:10.976587Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2020/MOSAIC-S2-BRAZIL-3M_V1_20200701_20200930_P20260106_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20200101_20200331_P20260112",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2020-01-01T00:00:00.000000Z",
+    "start_datetime": "2020-01-01T00:00:00.000000Z",
+    "end_datetime": "2020-03-31T23:59:59.000000Z",
+    "created": "2026-01-15T00:00:26.927254Z",
+    "updated": "2026-01-15T00:00:26.904941Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2020/MOSAIC-S2-BRAZIL-3M_V1_20200101_20200331_P20260112_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20191001_20191231_P20260318",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2019-10-01T00:00:00.000000Z",
+    "start_datetime": "2019-10-01T00:00:00.000000Z",
+    "end_datetime": "2019-12-31T23:59:59.000000Z",
+    "created": "2026-03-26T12:29:21.725417Z",
+    "updated": "2026-03-26T12:29:21.711462Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2019/MOSAIC-S2-BRAZIL-3M_V1_20191001_20191231_P20260318_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20190701_20190930_P20260112",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2019-07-01T00:00:00.000000Z",
+    "start_datetime": "2019-07-01T00:00:00.000000Z",
+    "end_datetime": "2019-09-30T23:59:59.000000Z",
+    "created": "2026-01-15T03:57:56.344082Z",
+    "updated": "2026-03-26T13:00:09.854619Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2019/MOSAIC-S2-BRAZIL-3M_V1_20190701_20190930_P20260112_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20190401_20190630_P20260120",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2019-04-01T00:00:00.000000Z",
+    "start_datetime": "2019-04-01T00:00:00.000000Z",
+    "end_datetime": "2019-06-30T23:59:59.000000Z",
+    "created": "2026-03-26T13:38:46.875948Z",
+    "updated": "2026-03-26T13:38:46.872884Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2019/MOSAIC-S2-BRAZIL-3M_V1_20190401_20190630_P20260120_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20190101_20190331_P20260123",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2019-01-01T00:00:00.000000Z",
+    "start_datetime": "2019-01-01T00:00:00.000000Z",
+    "end_datetime": "2019-03-31T23:59:59.000000Z",
+    "created": "2026-03-26T14:08:04.159670Z",
+    "updated": "2026-03-26T14:08:04.153433Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2019/MOSAIC-S2-BRAZIL-3M_V1_20190101_20190331_P20260123_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20181001_20181231_P20250923",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2018-10-01T00:00:00.000000Z",
+    "start_datetime": "2018-10-01T00:00:00.000000Z",
+    "end_datetime": "2018-12-31T23:59:59.000000Z",
+    "created": "2025-09-25T15:20:51.272519Z",
+    "updated": "2025-09-25T15:20:51.254870Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2018/MOSAIC-S2-BRAZIL-3M_V1_20181001_20181231_P20250923_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20180701_20180930_P20260202",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2018-07-01T00:00:00.000000Z",
+    "start_datetime": "2018-07-01T00:00:00.000000Z",
+    "end_datetime": "2018-09-30T23:59:59.000000Z",
+    "created": "2026-02-09T15:58:10.144923Z",
+    "updated": "2026-02-09T15:58:10.134559Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2018/MOSAIC-S2-BRAZIL-3M_V1_20180701_20180930_P20260202_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20180401_20180630_P20260131",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2018-04-01T00:00:00.000000Z",
+    "start_datetime": "2018-04-01T00:00:00.000000Z",
+    "end_datetime": "2018-06-30T23:59:59.000000Z",
+    "created": "2026-02-09T15:25:35.621724Z",
+    "updated": "2026-02-09T15:25:35.589629Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2018/MOSAIC-S2-BRAZIL-3M_V1_20180401_20180630_P20260131_VISUAL.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "MOSAIC-S2-BRAZIL-3M_V1_20180101_20180331_P20260206",
+   "collection": "mosaic-s2-brazil-3m-1",
+   "bbox": [
+    -76.015147,
+    -33.751728,
+    -27.63964,
+    6.192707
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -27.63964,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       6.192707
+      ],
+      [
+       -76.015147,
+       6.192707
+      ],
+      [
+       -76.015147,
+       -33.751728
+      ],
+      [
+       -27.63964,
+       -33.751728
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2018-01-01T00:00:00.000000Z",
+    "start_datetime": "2018-01-01T00:00:00.000000Z",
+    "end_datetime": "2018-03-31T23:59:59.000000Z",
+    "created": "2026-02-09T16:21:54.232580Z",
+    "updated": "2026-02-09T16:21:54.222485Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "visual": {
+     "href": "https://data.inpe.br/bdc/data/s2/s2-3m/v1/2018/MOSAIC-S2-BRAZIL-3M_V1_20180101_20180331_P20260206_VISUAL.tif"
+    }
+   }
+  }
+ ]
+}

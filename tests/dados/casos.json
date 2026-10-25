@@ -1,0 +1,64 @@
+{
+  "_leia": "Amostra de dados reais do RS (tests/dados/, gerada por extrair.sh) que o tests/preparar_banco_teste.sh carrega no banco nodaltrace_teste. 'datas': data_car_1 e data_car_2 são a atualização mais recente de um imóvel em cada arquivo do CAR (a pipeline as tira de lá); data_mapbiomas é a data de publicação passada à carga do MapBiomas (--publicado-em) e mapbiomas_dados_ate, a detecção mais recente do arquivo. 'imoveis' dá o código de cada papel (um imóvel pode ter mais de um papel); 'esperado', o que as cargas deixam no banco.",
+  "uf": "RS",
+  "datas": {
+    "data_car_1": "2026-06-18",
+    "data_car_2": "2026-09-15",
+    "data_mapbiomas": "2026-10-08",
+    "mapbiomas_dados_ate": "2024-12-01"
+  },
+  "imoveis": {
+    "ativo_sem_alerta": "RS-4300471-24B4E305B8DC435BBEE925806EA67951",
+    "pequena_propriedade": "RS-4300471-24B4E305B8DC435BBEE925806EA67951",
+    "ativo_sem_alerta_mata_atlantica": "RS-4300471-5A16847344A34F13890250C160509B90",
+    "grande_sem_alerta": "RS-4300471-7BC4D86208E741B885327E8299B124CD",
+    "alerta_pos_corte_grande": "RS-4300471-5B3E3D6F4D024DC1A89D86F999FAACB4",
+    "alerta_pos_corte_grande_mata_atlantica": "RS-4300471-F54F6899CCF54E1DB95CD457C33465A0",
+    "alerta_pos_corte_pequeno": "RS-4300471-3685FB0BF13A4A42A93E05D2802E46BC",
+    "alerta_so_antes_do_corte": "RS-4320107-BE5FBC090D1A4F6281A9F0632DA87189",
+    "alerta_entre_cortes": "RS-4320107-BE5FBC090D1A4F6281A9F0632DA87189",
+    "pendente": "RS-4320107-9180E6C99E2C4F47AFBF885D7FC737F8",
+    "suspenso": "RS-4300471-0C960D38614A46C48B67656E726612FE",
+    "cancelado": "RS-4300471-1778C5E794DB41CAA44868301F8DFF63",
+    "removido_na_carga2": "RS-4300471-D49C9BCA8CC14846980DBE3E93CDA4F2",
+    "alterado_na_carga2": "RS-4300471-F9DB99AA6BFD42CCB19006C467181C31",
+    "pampa": "RS-4300471-7BC4D86208E741B885327E8299B124CD",
+    "mata_atlantica": "RS-4300471-5A16847344A34F13890250C160509B90"
+  },
+  "esperado": {
+    "imoveis_carga_1": [
+      "RS-4300471-0C960D38614A46C48B67656E726612FE",
+      "RS-4300471-1778C5E794DB41CAA44868301F8DFF63",
+      "RS-4300471-226E141EC0C64262BB7DBE077898CB2B",
+      "RS-4300471-24B4E305B8DC435BBEE925806EA67951",
+      "RS-4300471-3685FB0BF13A4A42A93E05D2802E46BC",
+      "RS-4300471-5A16847344A34F13890250C160509B90",
+      "RS-4300471-5B3E3D6F4D024DC1A89D86F999FAACB4",
+      "RS-4300471-7BC4D86208E741B885327E8299B124CD",
+      "RS-4300471-D49C9BCA8CC14846980DBE3E93CDA4F2",
+      "RS-4300471-F54F6899CCF54E1DB95CD457C33465A0",
+      "RS-4300471-F9DB99AA6BFD42CCB19006C467181C31",
+      "RS-4320107-9180E6C99E2C4F47AFBF885D7FC737F8",
+      "RS-4320107-BE5FBC090D1A4F6281A9F0632DA87189"
+    ],
+    "imoveis_vigentes": 12,
+    "versoes": 14,
+    "cargas_car": [
+      {"data_referencia": "2026-06-18", "registros": 13, "inseridos": 13, "alterados": 0, "removidos": 0, "descartados": 0},
+      {"data_referencia": "2026-09-15", "registros": 12, "inseridos": 0, "alterados": 1, "removidos": 1, "descartados": 0}
+    ],
+    "alterado_na_carga2": {
+      "antes": {"status": "AT", "atualizado_sicar": "2020-05-29"},
+      "depois": {"status": "SU", "condicao": "Analisado, aguardando atendimento a notificacao", "atualizado_sicar": "2026-09-15"}
+    },
+    "alertas": 7,
+    "car_alerta": [
+      {"cod_imovel": "RS-4300471-3685FB0BF13A4A42A93E05D2802E46BC", "alerta": "960891", "detectado_em": "2023-05-01", "area_ha": 0.16},
+      {"cod_imovel": "RS-4300471-5B3E3D6F4D024DC1A89D86F999FAACB4", "alerta": "960891", "detectado_em": "2023-05-01", "area_ha": 2.27},
+      {"cod_imovel": "RS-4300471-F54F6899CCF54E1DB95CD457C33465A0", "alerta": "315526", "detectado_em": "2021-02-23", "area_ha": 2.08},
+      {"cod_imovel": "RS-4320107-BE5FBC090D1A4F6281A9F0632DA87189", "alerta": "169928", "detectado_em": "2020-06-21", "area_ha": 2.32}
+    ],
+    "municipios": [4300471, 4304705, 4320107],
+    "biomas": ["Mata Atlântica", "Pampa"]
+  }
+}

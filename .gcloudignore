@@ -1,0 +1,37 @@
+# O que o `gcloud builds submit` (deploy/gcp.sh imagens) envia: o mesmo recorte do .dockerignore.
+# Para reincluir um arquivo, a pasta dele também precisa ser reincluída.
+*
+!.dockerignore
+!db/
+!db/*.sql
+!db/nt_db/
+!db/nt_db/**
+!api/
+!api/nodaltrace/
+!api/nodaltrace/**
+!api/requirements.txt
+!pipeline/
+!pipeline/**
+!martin/
+!martin/**
+!deploy/
+!deploy/**
+!attestor/
+!attestor/**
+!docs/
+docs/*
+!docs/atestacao/
+docs/atestacao/*
+!docs/atestacao/vetores.json
+!web/
+!web/**
+web/node_modules/
+web/dist/
+web/*.local
+web/*.tsbuildinfo
+**/__pycache__/
+**/.pytest_cache/
+# Os cofres de chaves NUNCA sobem (o .dockerignore do attestor também os exclui).
+attestor/chaves/
+attestor/node_modules/
+attestor/dist/

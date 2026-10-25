@@ -1,0 +1,79 @@
+# Testes a cada push e pull request: frontend, attestor e backend (paridade, pipeline e API sobre o banco de testes
+# montado com a amostra de dados reais de tests/dados/, como no ./run.sh test). Não precisa de .env nem de segredos.
+name: testes
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+# Um push novo na mesma branch cancela a execução anterior.
+concurrency:
+  group: testes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run build
+
+  attestor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: attestor
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: attestor/package-lock.json
+      - run: npm ci
+      # Sem os testes de integração (Surfpool), como no npm test local.
+      - run: npm test
+      - run: npm run typecheck
+
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # O docker-compose.yml pensa em 16 GB para cargas de milhões de polígonos; a amostra cabe em bem menos.
+      PG_SHARED_BUFFERS: 512MB
+      PG_EFFECTIVE_CACHE_SIZE: 2GB
+      PG_MAINTENANCE_WORK_MEM: 256MB
+    steps:
+      - uses: actions/checkout@v5
+      - name: Banco
+        run: docker compose up -d --wait db
+      - name: Imagens da API e da pipeline
+        run: docker compose build api pipeline
+      - name: API
+        run: docker compose up -d --no-deps api
+      # web/src/api/contrato.ts tem de ser o que sai dos modelos da API (./run.sh tipos).
+      - name: Tipos do frontend em dia
+        run: docker compose exec -T api python -m nodaltrace.tipos_ts | diff -u web/src/api/contrato.ts -
+      # Paridade (no host), banco de testes (tests/preparar_banco_teste.sh), pipeline e API: todas as suítes rodam e o
+      # passo falha se alguma falhou.
+      - name: Testes
+        run: ./run.sh test
+      - name: Logs dos contêineres
+        if: failure()
+        run: docker compose logs --no-color --tail 200 db api

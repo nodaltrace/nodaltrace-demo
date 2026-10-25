@@ -1,0 +1,70 @@
+/* NodalTrace UI: tokens, botões e cartões. Requer Montserrat, Inter e JetBrains Mono.
+   Dois temas, pelo atributo data-tema do <html> (src/tema.ts): o escuro (o padrão, também sem o atributo) e o claro. Os
+   verdes da marca: --nt-verde-1 a 4, do mais escuro ao mais claro; o claro usa os dois escuros e o escuro, os dois claros.
+   As cores de status (verde, âmbar, vermelho, cinza) e o azul da seleção no mapa continuam: o verde da marca é da
+   interface, não quer dizer "conforme". Componente não usa cor fixa: só estes tokens. */
+:root{
+--nt-font-title:'Montserrat',sans-serif;--nt-font-body:'Inter',sans-serif;--nt-font-data:'JetBrains Mono',monospace;
+--nt-verde-1:#123f0d;--nt-verde-2:#16660e;--nt-verde-3:#7d992e;--nt-verde-4:#a9c642}
+/* Escuro: preto de verdade, com um fundo de verde, ações e destaques nos dois verdes claros. */
+:root,:root[data-tema="escuro"]{
+color-scheme:dark;
+--nt-bg:#08090A;--nt-surface:#0E1110;--nt-surface-2:#131715;--nt-surface-3:#1A1F1C;--nt-sunken:#0A0C0B;--nt-glass:rgba(14,17,16,.92);
+--nt-fg:#E7ECE5;--nt-fg-2:#B9C3B6;--nt-fg-muted:#8B978A;--nt-fg-subtle:#5E695F;
+--nt-line:#212724;--nt-line-soft:#181C1A;--nt-line-strong:#343C36;--nt-hover:rgba(255,255,255,.045);--nt-track:#262C28;
+--nt-accent:var(--nt-verde-4);--nt-accent-hover:#BBD45E;--nt-accent-soft:rgba(169,198,66,.12);--nt-accent-line:rgba(169,198,66,.45);--nt-on-accent:#0E1A0B;
+--nt-accent-2:var(--nt-verde-3);--nt-link:#BBD45E;
+--nt-rail:#0A0C0B;--nt-rail-fg:#8B978A;--nt-rail-fg-forte:#E7ECE5;--nt-rail-hover:rgba(255,255,255,.05);--nt-rail-line:#181C1A;
+--nt-shadow:0 1px 2px rgba(0,0,0,.4),0 6px 16px rgba(0,0,0,.4);--nt-shadow-lg:0 12px 32px rgba(0,0,0,.6);
+--st-ok:#5DBB7E;--st-warn:#D9A74A;--st-bad:#E0705F;--st-pend:#8E98A3;
+--st-ok-text:#7CCB97;--st-warn-text:#E3BB6E;--st-bad-text:#EFA195;--st-pend-text:#A3ACB6;
+--st-ok-soft:rgba(93,187,126,.12);--st-warn-soft:rgba(217,167,74,.12);--st-bad-soft:rgba(224,112,95,.10);--st-bad-line:rgba(224,112,95,.45);
+--nt-dica-bg:#E7ECE5;--nt-dica-fg:#0E1110;
+--nt-logo-texto:#EEF2EA;--nt-logo-tagline:var(--nt-verde-4);--nt-logo-ladrilho:#F3F6EC}
+/* Claro: branco com um fundo de verde, ações e destaques nos dois verdes escuros. */
+:root[data-tema="claro"]{
+color-scheme:light;
+--nt-bg:#F2F4EF;--nt-surface:#FFFFFF;--nt-surface-2:#F7F8F5;--nt-surface-3:#EAEEE5;--nt-sunken:#F3F5F0;--nt-glass:rgba(255,255,255,.94);
+--nt-fg:#142114;--nt-fg-2:#39463A;--nt-fg-muted:#5A675B;--nt-fg-subtle:#8A958A;
+--nt-line:#DCE2D6;--nt-line-soft:#E8ECE3;--nt-line-strong:#B6C0AE;--nt-hover:rgba(18,63,13,.05);--nt-track:#E0E5DA;
+--nt-accent:var(--nt-verde-2);--nt-accent-hover:var(--nt-verde-1);--nt-accent-soft:rgba(22,102,14,.09);--nt-accent-line:rgba(22,102,14,.4);--nt-on-accent:#FFFFFF;
+--nt-accent-2:var(--nt-verde-1);--nt-link:var(--nt-verde-2);
+--nt-rail:#FFFFFF;--nt-rail-fg:#5A675B;--nt-rail-fg-forte:#142114;--nt-rail-hover:rgba(18,63,13,.05);--nt-rail-line:#DCE2D6;
+--nt-shadow:0 1px 2px rgba(16,30,14,.06),0 4px 12px rgba(16,30,14,.08);--nt-shadow-lg:0 12px 32px rgba(16,30,14,.14);
+--st-ok:#2F7D4A;--st-warn:#A27719;--st-bad:#B4483C;--st-pend:#7A838D;
+--st-ok-text:#276B3E;--st-warn-text:#7F5C12;--st-bad-text:#93372D;--st-pend-text:#5B6470;
+--st-ok-soft:rgba(47,125,74,.10);--st-warn-soft:rgba(162,119,25,.10);--st-bad-soft:rgba(180,72,60,.07);--st-bad-line:rgba(180,72,60,.4);
+--nt-dica-bg:#142114;--nt-dica-fg:#FFFFFF;
+--nt-logo-texto:var(--nt-verde-1);--nt-logo-tagline:var(--nt-verde-2);--nt-logo-ladrilho:#EEF3E6}
+.nt{font-family:var(--nt-font-body);color:var(--nt-fg);background:var(--nt-bg)}
+.nt h1,.nt h2,.nt h3{font-family:var(--nt-font-title);font-weight:600;letter-spacing:-.01em}
+.nt-data{font-family:var(--nt-font-data);font-size:.8125rem}
+/* Botões: o principal (cheio), o secundário (com borda) e o de perigo (borda vermelha). Todo botão com texto tem fundo
+   ou borda, para não parecer texto solto. Tamanhos: o padrão (40 px) e --sm (32 px). Só com ícone: BotaoIcone (ui.tsx). */
+.nt-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 16px;border:1px solid transparent;border-radius:8px;font:600 .875rem/1.2 var(--nt-font-title);letter-spacing:.005em;text-align:center;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,border-color .15s,box-shadow .15s,transform .05s}
+.nt-btn svg{flex:none}
+.nt-btn:focus-visible{outline:2px solid var(--nt-accent);outline-offset:2px}
+.nt-btn:active:not([disabled]){transform:translateY(1px)}
+.nt-btn--primary{background:var(--nt-accent);color:var(--nt-on-accent);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 1px 2px rgba(0,0,0,.16)}
+.nt-btn--primary:hover:not([disabled]){background:var(--nt-accent-hover)}
+.nt-btn--outline{background:transparent;color:var(--nt-fg);border-color:var(--nt-line-strong)}
+.nt-btn--outline:hover:not([disabled]){background:var(--nt-accent-soft);border-color:var(--nt-accent);color:var(--nt-accent)}
+.nt-btn--perigo{background:transparent;color:var(--st-bad-text);border-color:var(--st-bad-line)}
+.nt-btn--perigo:hover:not([disabled]){background:var(--st-bad-soft);border-color:var(--st-bad)}
+.nt-btn--sm{min-height:32px;padding:0 12px;border-radius:7px;font-size:.8rem}
+.nt-btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
+/* Dica dos botões só com ícone (useDica, em components/ui.tsx): no body, com posição fixa. */
+.dica{position:fixed;z-index:1000;width:max-content;max-width:260px;padding:5px 9px;border-radius:6px;background:var(--nt-dica-bg);color:var(--nt-dica-fg);font:500 12px/1.35 var(--nt-font-body);letter-spacing:normal;text-transform:none;pointer-events:none;box-shadow:var(--nt-shadow);animation:nt-dica .12s ease-out}
+.dica--direita{transform:translateY(-50%)} .dica--esquerda{transform:translate(-100%,-50%)}
+.dica--cima{transform:translate(-50%,-100%)} .dica--baixo{transform:translateX(-50%)}
+@keyframes nt-dica{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){.dica{animation:none}}
+/* Cartões */
+.nt-card{position:relative;background:var(--nt-surface);border:1px solid var(--nt-line);border-radius:10px;padding:1.5rem}
+.nt-card--flat{background:transparent}
+.nt-card--metric .nt-metric{font:600 2.6rem/1 var(--nt-font-title)} .nt-card--metric .nt-data{color:var(--nt-fg-muted);display:block;margin-top:.6rem}
+.nt-hash{font:400 .78rem var(--nt-font-data);padding:.5rem .7rem;border-radius:6px;background:var(--nt-sunken);border:1px solid var(--nt-line-soft);word-break:break-all}
+.nt-badge{display:inline-flex;gap:.45rem;align-items:center;font:500 .75rem var(--nt-font-data)}
+.nt-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--nt-fg-subtle)} .nt-badge--alert::before{background:var(--st-warn)}
+.nt-table{color:inherit;width:100%;border-collapse:collapse;font-size:.9rem} .nt-table th{text-align:left;font:600 .8rem var(--nt-font-title);color:var(--nt-fg-muted);border-bottom:1px solid var(--nt-line-strong);padding:.6rem}
+.nt-table td{padding:.7rem .6rem;border-bottom:1px solid var(--nt-line)}

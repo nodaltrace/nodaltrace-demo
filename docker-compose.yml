@@ -1,0 +1,153 @@
+# Ambiente local: banco PostGIS, tiles (Martin), API e ingestão das bases externas.
+# O frontend roda fora do compose: `cd web && npm run dev`.
+name: nodaltrace
+
+x-banco: &banco
+  DATABASE_URL: postgresql://nodaltrace:${POSTGRES_PASSWORD:-nodaltrace}@db:5432/nodaltrace
+
+# Os contêineres Python rodam como root com o código montado: no Linux, o __pycache__ e o .pytest_cache que eles
+# gravassem no repositório ficariam do root (no Docker Desktop do Mac e do Windows ficam do usuário).
+x-python: &python
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTEST_ADDOPTS: -p no:cacheprovider
+
+services:
+  db:
+    # Mesmo PostgreSQL 17.5, PostGIS 3.5.2 e Debian 11 (glibc 2.31) da postgis/postgis:17-3.5, mas também em arm64:
+    # aquela só tem amd64 e roda emulada no Mac com Apple Silicon. Build multiarquitetura de um mantenedor da
+    # postgis/docker-postgis, fixado pelo digest do índice multiplataforma.
+    image: imresamu/postgis:17-3.5.2-bullseye@sha256:a3d4005d657e4c226e2614325f3ea2b232739125df4ebab159d77a9ed90d98ca
+    environment:
+      POSTGRES_DB: nodaltrace
+      POSTGRES_USER: nodaltrace
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nodaltrace}
+    # Ajustado para cargas de milhões de polígonos numa máquina de 16 GB. No Mac e no Windows o Docker roda numa VM
+    # com memória própria: o ./run.sh reduz os PG_* quando ela tem menos de 7 GB (ver README.pt-BR.md, "Configuração").
+    command: >
+      postgres
+      -c shared_buffers=${PG_SHARED_BUFFERS:-3GB}
+      -c effective_cache_size=${PG_EFFECTIVE_CACHE_SIZE:-8GB}
+      -c work_mem=64MB
+      -c maintenance_work_mem=${PG_MAINTENANCE_WORK_MEM:-1GB}
+      -c max_wal_size=8GB
+      -c max_parallel_workers_per_gather=4
+      -c random_page_cost=1.1
+      -c jit=off
+    shm_size: 1g
+    ports: ['127.0.0.1:5433:5432']
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U nodaltrace -d nodaltrace]
+      interval: 5s
+      retries: 20
+
+  martin:
+    # A mesma versão de deploy/martin.Dockerfile: com `latest`, cada máquina ficaria com a que baixou por último.
+    image: ghcr.io/maplibre/martin:1.16.1
+    command: --config /config/martin.yaml
+    environment: *banco
+    volumes: ['./martin:/config:ro']
+    ports: ['127.0.0.1:3000:3000']
+    # Num banco novo, o Martin sobe antes das migrações e sai por não achar o schema `ref`: tenta de novo até elas existirem.
+    restart: on-failure
+    depends_on:
+      db: { condition: service_healthy }
+
+  api:
+    build: ./api
+    environment:
+      <<: [*banco, *python]
+      # Atestação na Solana (perfil `solana`, ver README.pt-BR.md). Sem NT_ATTESTOR_URL a API sobe e só desliga a
+      # atestação. URL (http://attestor:8790), segredo e NT_AUTORIDADE vêm do ./run.sh solana-up, nunca do .env.
+      NT_ATTESTOR_URL: ${NT_ATTESTOR_URL:-}
+      NT_ATTESTOR_SEGREDO: ${NT_ATTESTOR_SEGREDO:-}
+      NT_SOLANA_CLUSTER: ${NT_SOLANA_CLUSTER:-devnet}
+      NT_SOLANA_RPC: ${NT_SOLANA_RPC:-https://api.devnet.solana.com}
+      NT_AUTORIDADE: ${NT_AUTORIDADE:-}
+      # Endereço público do app: o PDF do relatório leva a página de verificação (<NT_URL_PUBLICA>/verificar/<id>).
+      NT_URL_PUBLICA: ${NT_URL_PUBLICA:-http://localhost:5173}
+      # Recortes das imagens históricas (api/nodaltrace/servicos/imagens.py): cada um vai ao INPE uma vez só.
+      NT_IMAGENS_DIR: /imagens
+    command: uvicorn nodaltrace.main:app --host 0.0.0.0 --port 8000 --reload
+    # docs/ só para o teste da árvore de Merkle contra os vetores do contrato (docs/atestacao/vetores.json);
+    # tests/dados/ só para os testes lerem os papéis da amostra do banco de testes (casos.json).
+    volumes: ['./api:/app', './docs:/docs:ro', './tests/dados:/dados-teste:ro', 'imagens:/imagens']
+    ports: ['127.0.0.1:8000:8000']
+    depends_on:
+      db: { condition: service_healthy }
+
+  # Uso: docker compose run --rm pipeline <comando>  (ver README.pt-BR.md, seção Pipeline)
+  pipeline:
+    build: ./pipeline
+    profiles: [pipeline]
+    environment:
+      <<: [*banco, *python]
+      PYTHONPATH: /db
+    volumes:
+      - './pipeline:/app'
+      - './db:/db:ro'
+      - '${DADOS_DIR:-./dados}:/dados:ro'
+    depends_on:
+      db: { condition: service_healthy }
+
+  # Atestação na Solana (devnet). O attestor só sobe pelo ./run.sh solana-up, que decifra a chave e passa os segredos
+  # pela env do shell: nada disso fica em arquivo. Não publica porta no host.
+  # Assina e envia as atestações (CONTRATO.md §5). Só a API o chama, com HMAC; a pipeline não tem o segredo.
+  attestor:
+    build: ./attestor
+    image: nodaltrace-attestor:local
+    profiles: [solana]
+    # Dono dos cofres no host (./run.sh exporta NT_UID/NT_GID): os arquivos são 0600.
+    user: ${NT_UID:-1000}:${NT_GID:-1000}
+    environment:
+      PORT: '8790'
+      NT_SOLANA_RPC: ${NT_SOLANA_RPC:-https://api.devnet.solana.com}
+      NT_SOLANA_CLUSTER: ${NT_SOLANA_CLUSTER:-devnet}
+      NT_ATTESTOR_SEGREDO: ${NT_ATTESTOR_SEGREDO:-}
+      NT_CHAVES_SENHA: ${NT_CHAVES_SENHA:-}
+      NT_AUTORIDADE: ${NT_AUTORIDADE:-}
+      NT_SALDO_MINIMO_LAMPORTS: ${NT_SALDO_MINIMO_LAMPORTS:-50000000}
+    # Só o cofre que o servidor usa (o do atestador, que assina e paga), por bind, só leitura. autoridade.json (e a
+    # senha dela) nunca entram aqui; o servidor recusa subir se autoridade.json aparecer em /app/chaves.
+    volumes:
+      - { type: bind, source: ./attestor/chaves/atestador.json, target: /app/chaves/atestador.json, read_only: true, bind: { create_host_path: false } }
+    # Sem porta no host: a API o alcança em http://attestor:8790; para depurar, ./run.sh solana-saude.
+    restart: unless-stopped
+
+  # Setup do SAS (credencial e schema), descartável: ./run.sh solana-setup roda com `docker compose run --rm`.
+  # Perfil próprio, para nunca subir com o perfil `solana`. Único lugar que recebe autoridade.json e a senha dela (a
+  # autoridade paga o setup); o atestador entra só como endereço (NT_ATESTADOR).
+  attestor-setup:
+    image: nodaltrace-attestor:local
+    profiles: [solana-setup]
+    user: ${NT_UID:-1000}:${NT_GID:-1000}
+    entrypoint: [node, dist/setup.js]
+    environment:
+      NT_SOLANA_RPC: ${NT_SOLANA_RPC:-https://api.devnet.solana.com}
+      NT_SOLANA_CLUSTER: ${NT_SOLANA_CLUSTER:-devnet}
+      NT_ATESTADOR: ${NT_ATESTADOR:-}
+      NT_CHAVES_SENHA_AUTORIDADE: ${NT_CHAVES_SENHA_AUTORIDADE:-}
+    volumes:
+      - { type: bind, source: ./attestor/chaves/autoridade.json, target: /app/chaves/autoridade.json, read_only: true, bind: { create_host_path: false } }
+    logging: { driver: none }
+    restart: 'no'
+
+  # Saldos e airdrop da devnet (./run.sh solana). Descartável como o attestor-setup. Não monta cofre nenhum: as duas
+  # contas entram só como endereço.
+  attestor-fundos:
+    image: nodaltrace-attestor:local
+    profiles: [solana-setup]
+    user: ${NT_UID:-1000}:${NT_GID:-1000}
+    entrypoint: [node, dist/fundos.js]
+    environment:
+      NT_SOLANA_RPC: ${NT_SOLANA_RPC:-https://api.devnet.solana.com}
+      NT_SOLANA_CLUSTER: ${NT_SOLANA_CLUSTER:-devnet}
+      NT_SALDO_MINIMO_LAMPORTS: ${NT_SALDO_MINIMO_LAMPORTS:-50000000}
+      NT_AUTORIDADE: ${NT_AUTORIDADE:-}
+      NT_ATESTADOR: ${NT_ATESTADOR:-}
+    logging: { driver: none }
+    restart: 'no'
+
+volumes:
+  pgdata:
+  imagens:

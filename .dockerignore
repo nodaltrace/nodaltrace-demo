@@ -1,0 +1,17 @@
+# Imagens com a raiz como contexto: as da nuvem (deploy/*.Dockerfile). Só o que elas levam.
+*
+!db/*.sql
+!db/nt_db/
+!api/nodaltrace/
+!api/requirements.txt
+!pipeline/
+!martin/
+!deploy/
+!web/
+!docs/atestacao/vetores.json
+web/node_modules
+web/dist
+web/*.local
+web/*.tsbuildinfo
+**/__pycache__
+**/.pytest_cache

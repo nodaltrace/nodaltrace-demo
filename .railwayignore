@@ -1,0 +1,15 @@
+# O que o `railway up` não envia. Ele já respeita o .gitignore, mas não o .git/info/exclude: os
+# segredos e as notas locais ficam listados aqui de novo, por garantia.
+attestor/chaves/
+.env
+.env.*
+web/.env.local
+LOCAL_PASSWORDS.md
+PROJECT_DETAILS.md
+mock/
+dados/
+deploy/demo/*.dump
+**/node_modules/
+**/dist/
+**/__pycache__/
+.DS_Store

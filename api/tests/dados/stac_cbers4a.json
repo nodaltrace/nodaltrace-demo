@@ -1,0 +1,1999 @@
+{
+ "type": "FeatureCollection",
+ "links": [],
+ "context": {
+  "matched": 39,
+  "returned": 39
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260924_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.805331,
+    -18.761276,
+    -47.746993,
+    -17.776833
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.823297,
+       -18.807965
+      ],
+      [
+       -48.823297,
+       -17.729937
+      ],
+      [
+       -47.721905,
+       -17.729937
+      ],
+      [
+       -47.721905,
+       -18.807965
+      ],
+      [
+       -48.823297,
+       -18.807965
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-09-24T00:00:00.000000Z",
+    "start_datetime": "2026-09-24T00:00:00.000000Z",
+    "end_datetime": "2026-09-24T00:00:00.000000Z",
+    "created": "2026-09-28T12:15:51.665213Z",
+    "updated": "2026-09-28T12:15:51.663714Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2026/9/CBERS4A_WPM_PCA_RGB321_20260924_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260824_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.81735,
+    -17.969007,
+    -47.764281,
+    -16.984573
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.834712,
+       -18.0151
+      ],
+      [
+       -48.834712,
+       -16.938311
+      ],
+      [
+       -47.74002,
+       -16.938311
+      ],
+      [
+       -47.74002,
+       -18.0151
+      ],
+      [
+       -48.834712,
+       -18.0151
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-08-24T00:00:00.000000Z",
+    "start_datetime": "2026-08-24T00:00:00.000000Z",
+    "end_datetime": "2026-08-24T00:00:00.000000Z",
+    "created": "2026-09-01T14:34:04.966898Z",
+    "updated": "2026-09-01T14:34:04.964845Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2026/8/CBERS4A_WPM_PCA_RGB321_20260824_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260729_205_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.023467,
+    -17.967842,
+    -46.972243,
+    -16.985252
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.034424,
+       -18.004045
+      ],
+      [
+       -48.034424,
+       -16.948426
+      ],
+      [
+       -46.962614,
+       -16.948426
+      ],
+      [
+       -46.962614,
+       -18.004045
+      ],
+      [
+       -48.034424,
+       -18.004045
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-07-29T00:00:00.000000Z",
+    "start_datetime": "2026-07-29T00:00:00.000000Z",
+    "end_datetime": "2026-07-29T00:00:00.000000Z",
+    "created": "2026-07-31T05:48:04.178130Z",
+    "updated": "2026-07-31T05:48:04.176158Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/135/2026/7/CBERS4A_WPM_PCA_RGB321_20260729_205_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260724_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.782415,
+    -17.968054,
+    -47.729221,
+    -16.985206
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.799918,
+       -18.014288
+      ],
+      [
+       -48.799918,
+       -16.938811
+      ],
+      [
+       -47.706681,
+       -16.938811
+      ],
+      [
+       -47.706681,
+       -18.014288
+      ],
+      [
+       -48.799918,
+       -18.014288
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-07-24T00:00:00.000000Z",
+    "start_datetime": "2026-07-24T00:00:00.000000Z",
+    "end_datetime": "2026-07-24T00:00:00.000000Z",
+    "created": "2026-07-25T19:42:41.310987Z",
+    "updated": "2026-07-25T19:42:41.309056Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2026/7/CBERS4A_WPM_PCA_RGB321_20260724_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260724_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.961649,
+    -18.760718,
+    -47.903005,
+    -17.77721
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.978831,
+       -18.806647
+      ],
+      [
+       -48.978831,
+       -17.73103
+      ],
+      [
+       -47.88053,
+       -17.73103
+      ],
+      [
+       -47.88053,
+       -18.806647
+      ],
+      [
+       -48.978831,
+       -18.806647
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-07-24T00:00:00.000000Z",
+    "start_datetime": "2026-07-24T00:00:00.000000Z",
+    "end_datetime": "2026-07-24T00:00:00.000000Z",
+    "created": "2026-07-25T19:43:49.764761Z",
+    "updated": "2026-07-25T19:43:49.762804Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2026/7/CBERS4A_WPM_PCA_RGB321_20260724_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260422_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.522028,
+    -18.760795,
+    -47.466578,
+    -17.777996
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.533649,
+       -18.797427
+      ],
+      [
+       -48.533649,
+       -17.740761
+      ],
+      [
+       -47.45634,
+       -17.740761
+      ],
+      [
+       -47.45634,
+       -18.797427
+      ],
+      [
+       -48.533649,
+       -18.797427
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-04-22T00:00:00.000000Z",
+    "start_datetime": "2026-04-22T00:00:00.000000Z",
+    "end_datetime": "2026-04-22T00:00:00.000000Z",
+    "created": "2026-04-26T04:57:23.778473Z",
+    "updated": "2026-04-26T04:57:23.776197Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2026/4/CBERS4A_WPM_PCA_RGB321_20260422_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260422_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.34706,
+    -17.967972,
+    -47.296885,
+    -16.98617
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.358275,
+       -18.004366
+      ],
+      [
+       -48.358275,
+       -16.949168
+      ],
+      [
+       -47.286957,
+       -16.949168
+      ],
+      [
+       -47.286957,
+       -18.004366
+      ],
+      [
+       -48.358275,
+       -18.004366
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-04-22T00:00:00.000000Z",
+    "start_datetime": "2026-04-22T00:00:00.000000Z",
+    "end_datetime": "2026-04-22T00:00:00.000000Z",
+    "created": "2026-04-26T04:58:18.699029Z",
+    "updated": "2026-04-26T04:58:18.696863Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2026/4/CBERS4A_WPM_PCA_RGB321_20260422_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20260322_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.403232,
+    -17.966924,
+    -47.355184,
+    -16.986842
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.414505,
+       -18.00339
+      ],
+      [
+       -48.414505,
+       -16.949797
+      ],
+      [
+       -47.345221,
+       -16.949797
+      ],
+      [
+       -47.345221,
+       -18.00339
+      ],
+      [
+       -48.414505,
+       -18.00339
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2026-03-22T00:00:00.000000Z",
+    "start_datetime": "2026-03-22T00:00:00.000000Z",
+    "end_datetime": "2026-03-22T00:00:00.000000Z",
+    "created": "2026-03-23T17:10:35.397630Z",
+    "updated": "2026-03-23T17:10:35.395491Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2026/3/CBERS4A_WPM_PCA_RGB321_20260322_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20251118_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.743099,
+    -18.759172,
+    -47.688397,
+    -17.779765
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.761287,
+       -18.806121
+      ],
+      [
+       -48.761287,
+       -17.732633
+      ],
+      [
+       -47.664896,
+       -17.732633
+      ],
+      [
+       -47.664896,
+       -18.806121
+      ],
+      [
+       -48.761287,
+       -18.806121
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-11-18T00:00:00.000000Z",
+    "start_datetime": "2025-11-18T00:00:00.000000Z",
+    "end_datetime": "2025-11-18T00:00:00.000000Z",
+    "created": "2025-11-19T17:17:39.601167Z",
+    "updated": "2025-11-19T17:17:39.598978Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2025/11/CBERS4A_WPM_PCA_RGB321_20251118_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20251023_205_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -47.914042,
+    -18.758903,
+    -46.86161,
+    -17.779297
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -47.924995,
+       -18.795057
+      ],
+      [
+       -47.924995,
+       -17.742491
+      ],
+      [
+       -46.852017,
+       -17.742491
+      ],
+      [
+       -46.852017,
+       -18.795057
+      ],
+      [
+       -47.924995,
+       -18.795057
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-10-23T00:00:00.000000Z",
+    "start_datetime": "2025-10-23T00:00:00.000000Z",
+    "end_datetime": "2025-10-23T00:00:00.000000Z",
+    "created": "2025-10-25T00:18:56.466451Z",
+    "updated": "2025-10-25T00:18:56.464067Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/136/2025/10/CBERS4A_WPM_PCA_RGB321_20251023_205_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250822_205_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.003877,
+    -18.760687,
+    -46.948185,
+    -17.777895
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.014971,
+       -18.796896
+      ],
+      [
+       -48.014971,
+       -17.741037
+      ],
+      [
+       -46.938471,
+       -17.741037
+      ],
+      [
+       -46.938471,
+       -18.796896
+      ],
+      [
+       -48.014971,
+       -18.796896
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-08-22T00:00:00.000000Z",
+    "start_datetime": "2025-08-22T00:00:00.000000Z",
+    "end_datetime": "2025-08-22T00:00:00.000000Z",
+    "created": "2025-08-24T12:18:09.116836Z",
+    "updated": "2025-08-24T12:18:09.114588Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/136/2025/8/CBERS4A_WPM_PCA_RGB321_20250822_205_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250817_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.579082,
+    -17.967619,
+    -47.529393,
+    -16.98603
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.590545,
+       -18.004268
+      ],
+      [
+       -48.590545,
+       -16.948812
+      ],
+      [
+       -47.519252,
+       -16.948812
+      ],
+      [
+       -47.519252,
+       -18.004268
+      ],
+      [
+       -48.590545,
+       -18.004268
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-08-17T00:00:00.000000Z",
+    "start_datetime": "2025-08-17T00:00:00.000000Z",
+    "end_datetime": "2025-08-17T00:00:00.000000Z",
+    "created": "2025-08-19T09:30:09.858477Z",
+    "updated": "2025-08-19T09:30:09.856085Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2025/8/CBERS4A_WPM_PCA_RGB321_20250817_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250817_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.755935,
+    -18.760617,
+    -47.698561,
+    -17.778342
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.774107,
+       -18.807522
+      ],
+      [
+       -48.774107,
+       -17.731251
+      ],
+      [
+       -47.675046,
+       -17.731251
+      ],
+      [
+       -47.675046,
+       -18.807522
+      ],
+      [
+       -48.774107,
+       -18.807522
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-08-17T00:00:00.000000Z",
+    "start_datetime": "2025-08-17T00:00:00.000000Z",
+    "end_datetime": "2025-08-17T00:00:00.000000Z",
+    "created": "2025-08-19T09:31:29.932362Z",
+    "updated": "2025-08-19T09:31:29.930029Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2025/8/CBERS4A_WPM_PCA_RGB321_20250817_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250717_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.432024,
+    -17.966214,
+    -47.385551,
+    -16.98754
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.443331,
+       -18.002692
+      ],
+      [
+       -48.443331,
+       -16.950491
+      ],
+      [
+       -47.37553,
+       -16.950491
+      ],
+      [
+       -47.37553,
+       -18.002692
+      ],
+      [
+       -48.443331,
+       -18.002692
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-07-17T00:00:00.000000Z",
+    "start_datetime": "2025-07-17T00:00:00.000000Z",
+    "end_datetime": "2025-07-17T00:00:00.000000Z",
+    "created": "2025-07-19T11:31:09.210216Z",
+    "updated": "2025-07-19T11:31:09.207699Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2025/7/CBERS4A_WPM_PCA_RGB321_20250717_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250616_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.367797,
+    -17.96636,
+    -47.320215,
+    -16.986936
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.379033,
+       -18.00284
+      ],
+      [
+       -48.379033,
+       -16.949876
+      ],
+      [
+       -47.310264,
+       -16.949876
+      ],
+      [
+       -47.310264,
+       -18.00284
+      ],
+      [
+       -48.379033,
+       -18.00284
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-06-16T00:00:00.000000Z",
+    "start_datetime": "2025-06-16T00:00:00.000000Z",
+    "end_datetime": "2025-06-16T00:00:00.000000Z",
+    "created": "2025-06-18T05:56:03.573617Z",
+    "updated": "2025-06-18T05:56:03.571366Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2025/6/CBERS4A_WPM_PCA_RGB321_20250616_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250516_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.416847,
+    -17.96817,
+    -47.365879,
+    -16.985512
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.428166,
+       -18.004668
+      ],
+      [
+       -48.428166,
+       -16.948434
+      ],
+      [
+       -47.355887,
+       -16.948434
+      ],
+      [
+       -47.355887,
+       -18.004668
+      ],
+      [
+       -48.428166,
+       -18.004668
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-05-16T00:00:00.000000Z",
+    "start_datetime": "2025-05-16T00:00:00.000000Z",
+    "end_datetime": "2025-05-16T00:00:00.000000Z",
+    "created": "2025-05-18T00:26:22.217371Z",
+    "updated": "2025-05-18T00:26:22.215287Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2025/5/CBERS4A_WPM_PCA_RGB321_20250516_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20250315_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.454197,
+    -17.965922,
+    -47.40787,
+    -16.987582
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.465525,
+       -18.002432
+      ],
+      [
+       -48.465525,
+       -16.950498
+      ],
+      [
+       -47.397852,
+       -16.950498
+      ],
+      [
+       -47.397852,
+       -18.002432
+      ],
+      [
+       -48.465525,
+       -18.002432
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2025-03-15T00:00:00.000000Z",
+    "start_datetime": "2025-03-15T00:00:00.000000Z",
+    "end_datetime": "2025-03-15T00:00:00.000000Z",
+    "created": "2025-03-18T23:00:04.598890Z",
+    "updated": "2025-03-18T23:00:04.596794Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2025/3/CBERS4A_WPM_PCA_RGB321_20250315_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20241212_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.82185,
+    -17.966188,
+    -47.772318,
+    -16.987641
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.839165,
+       -18.012279
+      ],
+      [
+       -48.839165,
+       -16.941392
+      ],
+      [
+       -47.749994,
+       -16.941392
+      ],
+      [
+       -47.749994,
+       -18.012279
+      ],
+      [
+       -48.839165,
+       -18.012279
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-12T00:00:00.000000Z",
+    "start_datetime": "2024-12-12T00:00:00.000000Z",
+    "end_datetime": "2024-12-12T00:00:00.000000Z",
+    "created": "2024-12-13T19:50:01.244158Z",
+    "updated": "2024-12-13T19:50:01.241532Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/12/CBERS4A_WPM_PCA_RGB321_20241212_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20241011_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.75153,
+    -18.759664,
+    -47.695351,
+    -17.778701
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.76971,
+       -18.806584
+      ],
+      [
+       -48.76971,
+       -17.731594
+      ],
+      [
+       -47.671842,
+       -17.731594
+      ],
+      [
+       -47.671842,
+       -18.806584
+      ],
+      [
+       -48.76971,
+       -18.806584
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-10-11T00:00:00.000000Z",
+    "start_datetime": "2024-10-11T00:00:00.000000Z",
+    "end_datetime": "2024-10-11T00:00:00.000000Z",
+    "created": "2024-10-12T16:33:04.279766Z",
+    "updated": "2024-10-12T16:33:04.277420Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/10/CBERS4A_WPM_PCA_RGB321_20241011_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20241011_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.5743,
+    -17.96696,
+    -47.525723,
+    -16.986296
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.58576,
+       -18.003576
+      ],
+      [
+       -48.58576,
+       -16.949112
+      ],
+      [
+       -47.515558,
+       -16.949112
+      ],
+      [
+       -47.515558,
+       -18.003576
+      ],
+      [
+       -48.58576,
+       -18.003576
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-10-11T00:00:00.000000Z",
+    "start_datetime": "2024-10-11T00:00:00.000000Z",
+    "end_datetime": "2024-10-11T00:00:00.000000Z",
+    "created": "2024-10-12T16:34:02.147356Z",
+    "updated": "2024-10-12T16:34:02.145114Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/10/CBERS4A_WPM_PCA_RGB321_20241011_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240915_205_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.030831,
+    -18.7598,
+    -46.976992,
+    -17.779127
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.041929,
+       -18.796086
+      ],
+      [
+       -48.041929,
+       -17.742196
+      ],
+      [
+       -46.967243,
+       -17.742196
+      ],
+      [
+       -46.967243,
+       -18.796086
+      ],
+      [
+       -48.041929,
+       -18.796086
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-09-15T00:00:00.000000Z",
+    "start_datetime": "2024-09-15T00:00:00.000000Z",
+    "end_datetime": "2024-09-15T00:00:00.000000Z",
+    "created": "2024-09-19T09:21:34.551160Z",
+    "updated": "2024-09-19T09:21:34.548736Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/136/2024/9/CBERS4A_WPM_PCA_RGB321_20240915_205_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240910_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.851676,
+    -18.75972,
+    -47.795523,
+    -17.77866
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.869376,
+       -18.806155
+      ],
+      [
+       -48.869376,
+       -17.732011
+      ],
+      [
+       -47.772504,
+       -17.732011
+      ],
+      [
+       -47.772504,
+       -18.806155
+      ],
+      [
+       -48.869376,
+       -18.806155
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-09-10T00:00:00.000000Z",
+    "start_datetime": "2024-09-10T00:00:00.000000Z",
+    "end_datetime": "2024-09-10T00:00:00.000000Z",
+    "created": "2024-09-12T00:17:45.680781Z",
+    "updated": "2024-09-12T00:17:45.678497Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/9/CBERS4A_WPM_PCA_RGB321_20240910_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240910_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.675528,
+    -17.967031,
+    -47.624704,
+    -16.986541
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.693535,
+       -18.01374
+      ],
+      [
+       -48.693535,
+       -16.939708
+      ],
+      [
+       -47.601656,
+       -16.939708
+      ],
+      [
+       -47.601656,
+       -18.01374
+      ],
+      [
+       -48.693535,
+       -18.01374
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-09-10T00:00:00.000000Z",
+    "start_datetime": "2024-09-10T00:00:00.000000Z",
+    "end_datetime": "2024-09-10T00:00:00.000000Z",
+    "created": "2024-09-12T00:32:47.030297Z",
+    "updated": "2024-09-12T00:32:47.027735Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/9/CBERS4A_WPM_PCA_RGB321_20240910_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240815_205_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.017767,
+    -18.759794,
+    -46.963524,
+    -17.778431
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.02885,
+       -18.79603
+      ],
+      [
+       -48.02885,
+       -17.741547
+      ],
+      [
+       -46.953789,
+       -17.741547
+      ],
+      [
+       -46.953789,
+       -18.79603
+      ],
+      [
+       -48.02885,
+       -18.79603
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-08-15T00:00:00.000000Z",
+    "start_datetime": "2024-08-15T00:00:00.000000Z",
+    "end_datetime": "2024-08-15T00:00:00.000000Z",
+    "created": "2024-08-18T09:37:10.635627Z",
+    "updated": "2024-08-18T09:37:10.633372Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/136/2024/8/CBERS4A_WPM_PCA_RGB321_20240815_205_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240710_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.715275,
+    -17.967393,
+    -47.663879,
+    -16.986387
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.73311,
+       -18.013942
+      ],
+      [
+       -48.73311,
+       -16.939702
+      ],
+      [
+       -47.641001,
+       -16.939702
+      ],
+      [
+       -47.641001,
+       -18.013942
+      ],
+      [
+       -48.73311,
+       -18.013942
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-07-10T00:00:00.000000Z",
+    "start_datetime": "2024-07-10T00:00:00.000000Z",
+    "end_datetime": "2024-07-10T00:00:00.000000Z",
+    "created": "2024-07-11T20:24:07.984894Z",
+    "updated": "2024-07-11T20:24:07.982718Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/7/CBERS4A_WPM_PCA_RGB321_20240710_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240710_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.891566,
+    -18.760332,
+    -47.834743,
+    -17.778482
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.909088,
+       -18.80661
+      ],
+      [
+       -48.909088,
+       -17.73198
+      ],
+      [
+       -47.811898,
+       -17.73198
+      ],
+      [
+       -47.811898,
+       -18.80661
+      ],
+      [
+       -48.909088,
+       -18.80661
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-07-10T00:00:00.000000Z",
+    "start_datetime": "2024-07-10T00:00:00.000000Z",
+    "end_datetime": "2024-07-10T00:00:00.000000Z",
+    "created": "2024-07-11T20:25:30.017847Z",
+    "updated": "2024-07-11T20:25:30.015602Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/7/CBERS4A_WPM_PCA_RGB321_20240710_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240609_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.611361,
+    -17.967405,
+    -47.562443,
+    -16.986268
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.622864,
+       -18.004066
+      ],
+      [
+       -48.622864,
+       -16.949041
+      ],
+      [
+       -47.552237,
+       -16.949041
+      ],
+      [
+       -47.552237,
+       -18.004066
+      ],
+      [
+       -48.622864,
+       -18.004066
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-06-09T00:00:00.000000Z",
+    "start_datetime": "2024-06-09T00:00:00.000000Z",
+    "end_datetime": "2024-06-09T00:00:00.000000Z",
+    "created": "2024-06-10T22:29:02.958134Z",
+    "updated": "2024-06-10T22:29:02.955544Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/6/CBERS4A_WPM_PCA_RGB321_20240609_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240609_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.788617,
+    -18.759765,
+    -47.732138,
+    -17.77862
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.806609,
+       -18.806521
+      ],
+      [
+       -48.806609,
+       -17.731669
+      ],
+      [
+       -47.708817,
+       -17.731669
+      ],
+      [
+       -47.708817,
+       -18.806521
+      ],
+      [
+       -48.806609,
+       -18.806521
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-06-09T00:00:00.000000Z",
+    "start_datetime": "2024-06-09T00:00:00.000000Z",
+    "end_datetime": "2024-06-09T00:00:00.000000Z",
+    "created": "2024-06-10T22:29:46.546321Z",
+    "updated": "2024-06-10T22:29:46.543893Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/6/CBERS4A_WPM_PCA_RGB321_20240609_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240509_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.626548,
+    -18.759697,
+    -47.570089,
+    -17.778427
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.645298,
+       -18.807149
+      ],
+      [
+       -48.645298,
+       -17.730817
+      ],
+      [
+       -47.546003,
+       -17.730817
+      ],
+      [
+       -47.546003,
+       -18.807149
+      ],
+      [
+       -48.645298,
+       -18.807149
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-05-09T00:00:00.000000Z",
+    "start_datetime": "2024-05-09T00:00:00.000000Z",
+    "end_datetime": "2024-05-09T00:00:00.000000Z",
+    "created": "2024-05-16T06:13:53.683341Z",
+    "updated": "2024-05-16T06:13:53.681063Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/5/CBERS4A_WPM_PCA_RGB321_20240509_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240509_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.449069,
+    -17.967278,
+    -47.40024,
+    -16.98623
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.460421,
+       -18.003809
+      ],
+      [
+       -48.460421,
+       -16.949123
+      ],
+      [
+       -47.390213,
+       -16.949123
+      ],
+      [
+       -47.390213,
+       -18.003809
+      ],
+      [
+       -48.460421,
+       -18.003809
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-05-09T00:00:00.000000Z",
+    "start_datetime": "2024-05-09T00:00:00.000000Z",
+    "end_datetime": "2024-05-09T00:00:00.000000Z",
+    "created": "2024-05-16T06:14:44.773364Z",
+    "updated": "2024-05-16T06:14:44.771194Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/5/CBERS4A_WPM_PCA_RGB321_20240509_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240408_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.702187,
+    -17.967415,
+    -47.65092,
+    -16.986463
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.72008,
+       -18.014022
+      ],
+      [
+       -48.72008,
+       -16.939725
+      ],
+      [
+       -47.627984,
+       -16.939725
+      ],
+      [
+       -47.627984,
+       -18.014022
+      ],
+      [
+       -48.72008,
+       -18.014022
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-04-08T00:00:00.000000Z",
+    "start_datetime": "2024-04-08T00:00:00.000000Z",
+    "end_datetime": "2024-04-08T00:00:00.000000Z",
+    "created": "2024-04-23T17:52:40.759051Z",
+    "updated": "2024-05-06T02:00:13.091857Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2024/4/CBERS4A_WPM_PCA_RGB321_20240408_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20240408_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.878495,
+    -18.760292,
+    -47.821913,
+    -17.778614
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.896076,
+       -18.806625
+      ],
+      [
+       -48.896076,
+       -17.732061
+      ],
+      [
+       -47.79901,
+       -17.732061
+      ],
+      [
+       -47.79901,
+       -18.806625
+      ],
+      [
+       -48.896076,
+       -18.806625
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-04-08T00:00:00.000000Z",
+    "start_datetime": "2024-04-08T00:00:00.000000Z",
+    "end_datetime": "2024-04-08T00:00:00.000000Z",
+    "created": "2024-04-23T17:53:28.441281Z",
+    "updated": "2024-05-06T02:00:35.416805Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2024/4/CBERS4A_WPM_PCA_RGB321_20240408_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20231105_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.651803,
+    -18.760831,
+    -47.593324,
+    -17.77741
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.670461,
+       -18.80821
+      ],
+      [
+       -48.670461,
+       -17.729868
+      ],
+      [
+       -47.569308,
+       -17.729868
+      ],
+      [
+       -47.569308,
+       -18.80821
+      ],
+      [
+       -48.670461,
+       -18.80821
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-11-05T00:00:00.000000Z",
+    "start_datetime": "2023-11-05T00:00:00.000000Z",
+    "end_datetime": "2023-11-05T00:00:00.000000Z",
+    "created": "2023-11-10T21:25:21.536205Z",
+    "updated": "2023-11-10T21:25:21.533430Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2023/11/CBERS4A_WPM_PCA_RGB321_20231105_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230704_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.489401,
+    -17.969324,
+    -47.435666,
+    -16.984041
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.498884,
+       -18.004099
+      ],
+      [
+       -48.498884,
+       -16.948691
+      ],
+      [
+       -47.427472,
+       -16.948691
+      ],
+      [
+       -47.427472,
+       -18.004099
+      ],
+      [
+       -48.498884,
+       -18.004099
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-07-04T03:00:00.000000Z",
+    "start_datetime": "2023-07-04T03:00:00.000000Z",
+    "end_datetime": "2023-07-04T03:00:00.000000Z",
+    "created": "2023-07-21T00:28:20.903088Z",
+    "updated": "2023-07-21T00:28:20.898490Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2023/7/CBERS4A_WPM_PCA_RGB321_20230704_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230704_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.665893,
+    -18.762407,
+    -47.608033,
+    -17.776381
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.684403,
+       -18.807988
+      ],
+      [
+       -48.684403,
+       -17.730648
+      ],
+      [
+       -47.584207,
+       -17.730648
+      ],
+      [
+       -47.584207,
+       -18.807988
+      ],
+      [
+       -48.684403,
+       -18.807988
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-07-04T03:00:00.000000Z",
+    "start_datetime": "2023-07-04T03:00:00.000000Z",
+    "end_datetime": "2023-07-04T03:00:00.000000Z",
+    "created": "2023-07-21T00:29:24.261892Z",
+    "updated": "2023-07-21T00:29:24.257330Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2023/7/CBERS4A_WPM_PCA_RGB321_20230704_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230608_205_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -47.914565,
+    -18.761859,
+    -46.856802,
+    -17.777333
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -47.92363,
+       -18.796188
+      ],
+      [
+       -47.92363,
+       -17.742349
+      ],
+      [
+       -46.849073,
+       -17.742349
+      ],
+      [
+       -46.849073,
+       -18.796188
+      ],
+      [
+       -47.92363,
+       -18.796188
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-06-08T03:00:00.000000Z",
+    "start_datetime": "2023-06-08T03:00:00.000000Z",
+    "end_datetime": "2023-06-08T03:00:00.000000Z",
+    "created": "2023-07-18T23:46:16.685538Z",
+    "updated": "2023-07-18T23:46:16.681185Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/205/136/2023/6/CBERS4A_WPM_PCA_RGB321_20230608_205_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230402_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.691887,
+    -18.760669,
+    -47.634386,
+    -17.778215
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.710344,
+       -18.807861
+      ],
+      [
+       -48.710344,
+       -17.730847
+      ],
+      [
+       -47.610588,
+       -17.730847
+      ],
+      [
+       -47.610588,
+       -18.807861
+      ],
+      [
+       -48.710344,
+       -18.807861
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-04-02T00:00:00.000000Z",
+    "start_datetime": "2023-04-02T00:00:00.000000Z",
+    "end_datetime": "2023-04-02T00:00:00.000000Z",
+    "created": "2024-05-03T14:31:31.808952Z",
+    "updated": "2024-05-03T14:31:31.806412Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2023/4/CBERS4A_WPM_PCA_RGB321_20230402_206_136.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230402_206_135",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.51388,
+    -17.96765,
+    -47.464083,
+    -16.986116
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.52531,
+       -18.004249
+      ],
+      [
+       -48.52531,
+       -16.948945
+      ],
+      [
+       -47.453983,
+       -16.948945
+      ],
+      [
+       -47.453983,
+       -18.004249
+      ],
+      [
+       -48.52531,
+       -18.004249
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-04-02T00:00:00.000000Z",
+    "start_datetime": "2023-04-02T00:00:00.000000Z",
+    "end_datetime": "2023-04-02T00:00:00.000000Z",
+    "created": "2024-05-03T14:32:34.889540Z",
+    "updated": "2024-05-03T14:32:34.887206Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/135/2023/4/CBERS4A_WPM_PCA_RGB321_20230402_206_135.tif"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "CBERS4A_WPM_PCA_RGB321_20230302_206_136",
+   "collection": "CB4A-WPM-PCA-FUSED-1",
+   "bbox": [
+    -48.895664,
+    -18.760402,
+    -47.838206,
+    -17.777891
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -48.913167,
+       -18.806602
+      ],
+      [
+       -48.913167,
+       -17.731458
+      ],
+      [
+       -47.815405,
+       -17.731458
+      ],
+      [
+       -47.815405,
+       -18.806602
+      ],
+      [
+       -48.913167,
+       -18.806602
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2023-03-02T00:00:00.000000Z",
+    "start_datetime": "2023-03-02T00:00:00.000000Z",
+    "end_datetime": "2023-03-02T00:00:00.000000Z",
+    "created": "2024-05-08T17:03:20.409831Z",
+    "updated": "2024-05-08T17:03:20.407275Z",
+    "eo:cloud_cover": null
+   },
+   "assets": {
+    "tci": {
+     "href": "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/206/136/2023/3/CBERS4A_WPM_PCA_RGB321_20230302_206_136.tif"
+    }
+   }
+  }
+ ]
+}

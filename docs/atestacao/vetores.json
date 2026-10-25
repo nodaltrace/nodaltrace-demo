@@ -1,0 +1,650 @@
+{
+ "descricao": "Vetores de referência do CONTRATO.md. `casos`: JCS (RFC 8785) e árvore de Merkle (§3). `relatorio`: um documento NT_RELATORIO/1 completo, com as folhas, a raiz, a prova de cada folha, o nonce, os campos do schema e os bytes deles no SAS (§2 a §4). Gerados com rfc8785 (Python) e @solana/attestation; API, attestor, frontend e docs/atestacao/verificar.py conferem.",
+ "casos": [
+  {
+   "nome": "uma folha",
+   "itens": [
+    {
+     "tipo": "cabecalho",
+     "id": "cabecalho",
+     "schema": "NT_LOTE",
+     "versao_manifesto": 1,
+     "sujeito": {
+      "tipo": "lote",
+      "id": "EMB-01",
+      "dataset": "agrofel"
+     },
+     "sal": "1111111111111111111111111111111111111111111111111111111111111111",
+     "emitido_em": "2026-10-09T21:00:00Z",
+     "decisao": "conforme",
+     "ruleset_hash": "abababababababababababababababababababababababababababababababab",
+     "motor": "nodaltrace-api",
+     "anterior": null
+    }
+   ],
+   "ordem": [
+    [
+     "cabecalho",
+     "cabecalho"
+    ]
+   ],
+   "jcs": [
+    "{\"anterior\":null,\"decisao\":\"conforme\",\"emitido_em\":\"2026-10-09T21:00:00Z\",\"id\":\"cabecalho\",\"motor\":\"nodaltrace-api\",\"ruleset_hash\":\"abababababababababababababababababababababababababababababababab\",\"sal\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"schema\":\"NT_LOTE\",\"sujeito\":{\"dataset\":\"agrofel\",\"id\":\"EMB-01\",\"tipo\":\"lote\"},\"tipo\":\"cabecalho\",\"versao_manifesto\":1}"
+   ],
+   "folhas": [
+    "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e"
+   ],
+   "raiz": "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e"
+  },
+  {
+   "nome": "duas folhas",
+   "itens": [
+    {
+     "tipo": "lote",
+     "id": "L-001",
+     "tipo_lote": "origem",
+     "produto": "soja",
+     "volume_t": "30.500",
+     "data": "2026-09-01",
+     "instalacao_id": "I1",
+     "silo_id": "S1",
+     "fornecedor_id": "F1",
+     "propriedade_id": "P1",
+     "carga_id": null,
+     "status": "conforme"
+    },
+    {
+     "tipo": "cabecalho",
+     "id": "cabecalho",
+     "schema": "NT_LOTE",
+     "versao_manifesto": 1,
+     "sujeito": {
+      "tipo": "lote",
+      "id": "EMB-01",
+      "dataset": "agrofel"
+     },
+     "sal": "1111111111111111111111111111111111111111111111111111111111111111",
+     "emitido_em": "2026-10-09T21:00:00Z",
+     "decisao": "conforme",
+     "ruleset_hash": "abababababababababababababababababababababababababababababababab",
+     "motor": "nodaltrace-api",
+     "anterior": null
+    }
+   ],
+   "ordem": [
+    [
+     "cabecalho",
+     "cabecalho"
+    ],
+    [
+     "lote",
+     "L-001"
+    ]
+   ],
+   "jcs": [
+    "{\"anterior\":null,\"decisao\":\"conforme\",\"emitido_em\":\"2026-10-09T21:00:00Z\",\"id\":\"cabecalho\",\"motor\":\"nodaltrace-api\",\"ruleset_hash\":\"abababababababababababababababababababababababababababababababab\",\"sal\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"schema\":\"NT_LOTE\",\"sujeito\":{\"dataset\":\"agrofel\",\"id\":\"EMB-01\",\"tipo\":\"lote\"},\"tipo\":\"cabecalho\",\"versao_manifesto\":1}",
+    "{\"carga_id\":null,\"data\":\"2026-09-01\",\"fornecedor_id\":\"F1\",\"id\":\"L-001\",\"instalacao_id\":\"I1\",\"produto\":\"soja\",\"propriedade_id\":\"P1\",\"silo_id\":\"S1\",\"status\":\"conforme\",\"tipo\":\"lote\",\"tipo_lote\":\"origem\",\"volume_t\":\"30.500\"}"
+   ],
+   "folhas": [
+    "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e",
+    "1664dac0cea58aff9d709d8382baa3782e7ed9ed65cb1aae3304e029a22736bf"
+   ],
+   "raiz": "14448e824b32a2c9fd8c1baa222480e40921da8d9dfb1677ab90d42f07e196eb"
+  },
+  {
+   "nome": "tres folhas (impar promovida)",
+   "itens": [
+    {
+     "tipo": "evento",
+     "id": "recebimento:L-001",
+     "tipo_evento": "recebimento",
+     "data": "2026-09-01T12:00:00Z",
+     "titulo": "Recebimento de L-001",
+     "detalhe": "Fazenda São João → Armazém Ijuí",
+     "refs": {
+      "lote_id": "L-001"
+     }
+    },
+    {
+     "tipo": "lote",
+     "id": "L-001",
+     "tipo_lote": "origem",
+     "produto": "soja",
+     "volume_t": "30.500",
+     "data": "2026-09-01",
+     "instalacao_id": "I1",
+     "silo_id": "S1",
+     "fornecedor_id": "F1",
+     "propriedade_id": "P1",
+     "carga_id": null,
+     "status": "conforme"
+    },
+    {
+     "tipo": "cabecalho",
+     "id": "cabecalho",
+     "schema": "NT_LOTE",
+     "versao_manifesto": 1,
+     "sujeito": {
+      "tipo": "lote",
+      "id": "EMB-01",
+      "dataset": "agrofel"
+     },
+     "sal": "1111111111111111111111111111111111111111111111111111111111111111",
+     "emitido_em": "2026-10-09T21:00:00Z",
+     "decisao": "conforme",
+     "ruleset_hash": "abababababababababababababababababababababababababababababababab",
+     "motor": "nodaltrace-api",
+     "anterior": null
+    }
+   ],
+   "ordem": [
+    [
+     "cabecalho",
+     "cabecalho"
+    ],
+    [
+     "evento",
+     "recebimento:L-001"
+    ],
+    [
+     "lote",
+     "L-001"
+    ]
+   ],
+   "jcs": [
+    "{\"anterior\":null,\"decisao\":\"conforme\",\"emitido_em\":\"2026-10-09T21:00:00Z\",\"id\":\"cabecalho\",\"motor\":\"nodaltrace-api\",\"ruleset_hash\":\"abababababababababababababababababababababababababababababababab\",\"sal\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"schema\":\"NT_LOTE\",\"sujeito\":{\"dataset\":\"agrofel\",\"id\":\"EMB-01\",\"tipo\":\"lote\"},\"tipo\":\"cabecalho\",\"versao_manifesto\":1}",
+    "{\"data\":\"2026-09-01T12:00:00Z\",\"detalhe\":\"Fazenda São João → Armazém Ijuí\",\"id\":\"recebimento:L-001\",\"refs\":{\"lote_id\":\"L-001\"},\"tipo\":\"evento\",\"tipo_evento\":\"recebimento\",\"titulo\":\"Recebimento de L-001\"}",
+    "{\"carga_id\":null,\"data\":\"2026-09-01\",\"fornecedor_id\":\"F1\",\"id\":\"L-001\",\"instalacao_id\":\"I1\",\"produto\":\"soja\",\"propriedade_id\":\"P1\",\"silo_id\":\"S1\",\"status\":\"conforme\",\"tipo\":\"lote\",\"tipo_lote\":\"origem\",\"volume_t\":\"30.500\"}"
+   ],
+   "folhas": [
+    "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e",
+    "94f6da27c0bd13d1e4b320367f3dec3bab30194fa1f1fad5593058675f86ece6",
+    "1664dac0cea58aff9d709d8382baa3782e7ed9ed65cb1aae3304e029a22736bf"
+   ],
+   "raiz": "fdecf9b2ec125e8c684e73ec6458cb98c5d1b8a23196a57917d5d12098b19eb9"
+  },
+  {
+   "nome": "cinco folhas com acento e nulos",
+   "itens": [
+    {
+     "tipo": "documento",
+     "id": "nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+     "tipo_documento": "nfe",
+     "referencia": "L-001 · João",
+     "conteudo": "NFE|L-001|F1|30.5|D-38",
+     "hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+    },
+    {
+     "tipo": "transformacao",
+     "id": "T-01",
+     "tipo_transformacao": "mistura",
+     "data": "2026-09-05",
+     "instalacao_id": "I1",
+     "silo_id": "S2",
+     "perda_t": "0.000",
+     "entradas": [
+      {
+       "lote_id": "L-001",
+       "t": "30.500"
+      },
+      {
+       "lote_id": "L-002",
+       "t": "12.000"
+      }
+     ],
+     "saidas": [
+      {
+       "lote_id": "M-01",
+       "t": "42.500"
+      }
+     ]
+    },
+    {
+     "tipo": "evento",
+     "id": "recebimento:L-001",
+     "tipo_evento": "recebimento",
+     "data": "2026-09-01T12:00:00Z",
+     "titulo": "Recebimento de L-001",
+     "detalhe": "Fazenda São João → Armazém Ijuí",
+     "refs": {
+      "lote_id": "L-001"
+     }
+    },
+    {
+     "tipo": "lote",
+     "id": "L-002",
+     "tipo_lote": "origem",
+     "produto": "soja",
+     "volume_t": "12.000",
+     "data": "2026-09-01",
+     "instalacao_id": "I1",
+     "silo_id": "S1",
+     "fornecedor_id": "F2",
+     "propriedade_id": "P2",
+     "carga_id": null,
+     "status": "atencao"
+    },
+    {
+     "tipo": "cabecalho",
+     "id": "cabecalho",
+     "schema": "NT_LOTE",
+     "versao_manifesto": 1,
+     "sujeito": {
+      "tipo": "lote",
+      "id": "EMB-01",
+      "dataset": "agrofel"
+     },
+     "sal": "1111111111111111111111111111111111111111111111111111111111111111",
+     "emitido_em": "2026-10-09T21:00:00Z",
+     "decisao": "conforme",
+     "ruleset_hash": "abababababababababababababababababababababababababababababababab",
+     "motor": "nodaltrace-api",
+     "anterior": null
+    }
+   ],
+   "ordem": [
+    [
+     "cabecalho",
+     "cabecalho"
+    ],
+    [
+     "documento",
+     "nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+    ],
+    [
+     "evento",
+     "recebimento:L-001"
+    ],
+    [
+     "lote",
+     "L-002"
+    ],
+    [
+     "transformacao",
+     "T-01"
+    ]
+   ],
+   "jcs": [
+    "{\"anterior\":null,\"decisao\":\"conforme\",\"emitido_em\":\"2026-10-09T21:00:00Z\",\"id\":\"cabecalho\",\"motor\":\"nodaltrace-api\",\"ruleset_hash\":\"abababababababababababababababababababababababababababababababab\",\"sal\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"schema\":\"NT_LOTE\",\"sujeito\":{\"dataset\":\"agrofel\",\"id\":\"EMB-01\",\"tipo\":\"lote\"},\"tipo\":\"cabecalho\",\"versao_manifesto\":1}",
+    "{\"conteudo\":\"NFE|L-001|F1|30.5|D-38\",\"hash\":\"cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"id\":\"nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"referencia\":\"L-001 · João\",\"tipo\":\"documento\",\"tipo_documento\":\"nfe\"}",
+    "{\"data\":\"2026-09-01T12:00:00Z\",\"detalhe\":\"Fazenda São João → Armazém Ijuí\",\"id\":\"recebimento:L-001\",\"refs\":{\"lote_id\":\"L-001\"},\"tipo\":\"evento\",\"tipo_evento\":\"recebimento\",\"titulo\":\"Recebimento de L-001\"}",
+    "{\"carga_id\":null,\"data\":\"2026-09-01\",\"fornecedor_id\":\"F2\",\"id\":\"L-002\",\"instalacao_id\":\"I1\",\"produto\":\"soja\",\"propriedade_id\":\"P2\",\"silo_id\":\"S1\",\"status\":\"atencao\",\"tipo\":\"lote\",\"tipo_lote\":\"origem\",\"volume_t\":\"12.000\"}",
+    "{\"data\":\"2026-09-05\",\"entradas\":[{\"lote_id\":\"L-001\",\"t\":\"30.500\"},{\"lote_id\":\"L-002\",\"t\":\"12.000\"}],\"id\":\"T-01\",\"instalacao_id\":\"I1\",\"perda_t\":\"0.000\",\"saidas\":[{\"lote_id\":\"M-01\",\"t\":\"42.500\"}],\"silo_id\":\"S2\",\"tipo\":\"transformacao\",\"tipo_transformacao\":\"mistura\"}"
+   ],
+   "folhas": [
+    "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e",
+    "20498941fa75842811b28dfe7ece5cfe56ed933b8773aacf88a59e20ccf2a24b",
+    "94f6da27c0bd13d1e4b320367f3dec3bab30194fa1f1fad5593058675f86ece6",
+    "b6aa451aa6dd29d2e15b33d4b6a9c3fb1ac69bda96eada8758b6855961564c64",
+    "4e76c89a066c9c8ab36ba50f84b97310249630d170bc13864915741b6aab6912"
+   ],
+   "raiz": "ceb27258c25a3f1f1e5e8cbbb796039458e591cae1f7975f74f9129470e270b5"
+  },
+  {
+   "nome": "seis folhas",
+   "itens": [
+    {
+     "tipo": "documento",
+     "id": "nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+     "tipo_documento": "nfe",
+     "referencia": "L-001 · João",
+     "conteudo": "NFE|L-001|F1|30.5|D-38",
+     "hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+    },
+    {
+     "tipo": "transformacao",
+     "id": "T-01",
+     "tipo_transformacao": "mistura",
+     "data": "2026-09-05",
+     "instalacao_id": "I1",
+     "silo_id": "S2",
+     "perda_t": "0.000",
+     "entradas": [
+      {
+       "lote_id": "L-001",
+       "t": "30.500"
+      },
+      {
+       "lote_id": "L-002",
+       "t": "12.000"
+      }
+     ],
+     "saidas": [
+      {
+       "lote_id": "M-01",
+       "t": "42.500"
+      }
+     ]
+    },
+    {
+     "tipo": "evento",
+     "id": "recebimento:L-001",
+     "tipo_evento": "recebimento",
+     "data": "2026-09-01T12:00:00Z",
+     "titulo": "Recebimento de L-001",
+     "detalhe": "Fazenda São João → Armazém Ijuí",
+     "refs": {
+      "lote_id": "L-001"
+     }
+    },
+    {
+     "tipo": "lote",
+     "id": "L-002",
+     "tipo_lote": "origem",
+     "produto": "soja",
+     "volume_t": "12.000",
+     "data": "2026-09-01",
+     "instalacao_id": "I1",
+     "silo_id": "S1",
+     "fornecedor_id": "F2",
+     "propriedade_id": "P2",
+     "carga_id": null,
+     "status": "atencao"
+    },
+    {
+     "tipo": "lote",
+     "id": "L-001",
+     "tipo_lote": "origem",
+     "produto": "soja",
+     "volume_t": "30.500",
+     "data": "2026-09-01",
+     "instalacao_id": "I1",
+     "silo_id": "S1",
+     "fornecedor_id": "F1",
+     "propriedade_id": "P1",
+     "carga_id": null,
+     "status": "conforme"
+    },
+    {
+     "tipo": "cabecalho",
+     "id": "cabecalho",
+     "schema": "NT_LOTE",
+     "versao_manifesto": 1,
+     "sujeito": {
+      "tipo": "lote",
+      "id": "EMB-01",
+      "dataset": "agrofel"
+     },
+     "sal": "1111111111111111111111111111111111111111111111111111111111111111",
+     "emitido_em": "2026-10-09T21:00:00Z",
+     "decisao": "conforme",
+     "ruleset_hash": "abababababababababababababababababababababababababababababababab",
+     "motor": "nodaltrace-api",
+     "anterior": null
+    }
+   ],
+   "ordem": [
+    [
+     "cabecalho",
+     "cabecalho"
+    ],
+    [
+     "documento",
+     "nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+    ],
+    [
+     "evento",
+     "recebimento:L-001"
+    ],
+    [
+     "lote",
+     "L-001"
+    ],
+    [
+     "lote",
+     "L-002"
+    ],
+    [
+     "transformacao",
+     "T-01"
+    ]
+   ],
+   "jcs": [
+    "{\"anterior\":null,\"decisao\":\"conforme\",\"emitido_em\":\"2026-10-09T21:00:00Z\",\"id\":\"cabecalho\",\"motor\":\"nodaltrace-api\",\"ruleset_hash\":\"abababababababababababababababababababababababababababababababab\",\"sal\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"schema\":\"NT_LOTE\",\"sujeito\":{\"dataset\":\"agrofel\",\"id\":\"EMB-01\",\"tipo\":\"lote\"},\"tipo\":\"cabecalho\",\"versao_manifesto\":1}",
+    "{\"conteudo\":\"NFE|L-001|F1|30.5|D-38\",\"hash\":\"cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"id\":\"nfe:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"referencia\":\"L-001 · João\",\"tipo\":\"documento\",\"tipo_documento\":\"nfe\"}",
+    "{\"data\":\"2026-09-01T12:00:00Z\",\"detalhe\":\"Fazenda São João → Armazém Ijuí\",\"id\":\"recebimento:L-001\",\"refs\":{\"lote_id\":\"L-001\"},\"tipo\":\"evento\",\"tipo_evento\":\"recebimento\",\"titulo\":\"Recebimento de L-001\"}",
+    "{\"carga_id\":null,\"data\":\"2026-09-01\",\"fornecedor_id\":\"F1\",\"id\":\"L-001\",\"instalacao_id\":\"I1\",\"produto\":\"soja\",\"propriedade_id\":\"P1\",\"silo_id\":\"S1\",\"status\":\"conforme\",\"tipo\":\"lote\",\"tipo_lote\":\"origem\",\"volume_t\":\"30.500\"}",
+    "{\"carga_id\":null,\"data\":\"2026-09-01\",\"fornecedor_id\":\"F2\",\"id\":\"L-002\",\"instalacao_id\":\"I1\",\"produto\":\"soja\",\"propriedade_id\":\"P2\",\"silo_id\":\"S1\",\"status\":\"atencao\",\"tipo\":\"lote\",\"tipo_lote\":\"origem\",\"volume_t\":\"12.000\"}",
+    "{\"data\":\"2026-09-05\",\"entradas\":[{\"lote_id\":\"L-001\",\"t\":\"30.500\"},{\"lote_id\":\"L-002\",\"t\":\"12.000\"}],\"id\":\"T-01\",\"instalacao_id\":\"I1\",\"perda_t\":\"0.000\",\"saidas\":[{\"lote_id\":\"M-01\",\"t\":\"42.500\"}],\"silo_id\":\"S2\",\"tipo\":\"transformacao\",\"tipo_transformacao\":\"mistura\"}"
+   ],
+   "folhas": [
+    "d782c29d6f660ee683d1625bd1f13fcc22c1a0a130c7882faeb1f84ee1957c9e",
+    "20498941fa75842811b28dfe7ece5cfe56ed933b8773aacf88a59e20ccf2a24b",
+    "94f6da27c0bd13d1e4b320367f3dec3bab30194fa1f1fad5593058675f86ece6",
+    "1664dac0cea58aff9d709d8382baa3782e7ed9ed65cb1aae3304e029a22736bf",
+    "b6aa451aa6dd29d2e15b33d4b6a9c3fb1ac69bda96eada8758b6855961564c64",
+    "4e76c89a066c9c8ab36ba50f84b97310249630d170bc13864915741b6aab6912"
+   ],
+   "raiz": "075dcf2b041c7a4ea1a640c7a4f28d96f452fe50f537e810e1870e000384a985"
+  }
+ ],
+ "relatorio": {
+  "nome": "relatorio NT_RELATORIO/1 (correção, floats, acentos, nulos)",
+  "documento": "{\"itens\":[{\"analises\":[{\"base\":\"MapBiomas Alerta (alertas detectados até 15/09/2026)\",\"descricao\":\"Alertas do MapBiomas…\",\"id\":\"desmatamento_eudr\",\"nome\":\"Desmatamento após o corte da EUDR\"}],\"bases\":[{\"carregado_em\":\"2026-10-09T21:00:00Z\",\"dados_ate\":\"2026-09-30\",\"fonte\":\"sicar\",\"nome\":\"SICAR · Área do Imóvel\",\"publicado_em\":null,\"uf\":\"RS\",\"versao\":null}],\"emissor\":null,\"emitido_em\":\"2026-10-22T14:03:07Z\",\"formato\":\"NT_RELATORIO/1\",\"id\":\"cabecalho\",\"numero\":2,\"regras\":{\"parametros\":{\"area_min_alerta_ha\":1,\"corte_eudr\":\"2020-12-31\"},\"versao\":\"2026.1\"},\"relatorio\":\"NT-2026-000002\",\"serie\":\"7c9e6679-7425-40de-944b-e07fc1f90ae7\",\"substitui\":{\"motivo\":\"Área do alerta corrigida após revisão da interseção\",\"numero\":1,\"relatorio\":\"NT-2026-000001\"},\"tipo\":\"cabecalho\"},{\"contagem\":{\"atencao\":0,\"conforme\":1,\"nao_conforme\":1,\"pendente\":0},\"id\":\"resumo\",\"imoveis\":2,\"sal\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"status\":\"nao_conforme\",\"tipo\":\"resumo\"},{\"area_ha\":1234.5678,\"id\":\"RS-4300000-B2C3D4E5F60718293A4B5C6D7E8F9012\",\"limites\":[-50.1,-28.9,-50,-28.8],\"mod_fiscal\":61.72,\"municipio\":\"São José dos Ausentes\",\"resultados\":[{\"analise\":\"desmatamento_eudr\",\"detalhes\":[\"Alerta nº 1234567: 3,1 ha no imóvel\"],\"fatos\":{\"alertas\":[{\"alerta\":\"1234567\",\"area_alerta_ha\":12.5,\"area_ha\":3.0999999999999996,\"classe\":null,\"detectado_em\":\"2023-05-14\",\"fontes\":[\"SENTINEL-2\"],\"pos_corte\":true}]},\"resumo\":\"1 alerta depois do corte: 3,1 ha\",\"status\":\"nao_conforme\"}],\"sal\":\"3333333333333333333333333333333333333333333333333333333333333333\",\"situacao\":\"AT\",\"status\":\"nao_conforme\",\"tipo\":\"imovel\",\"uf\":\"RS\",\"versao_car\":{\"hash\":\"abababababababababababababababababababababababababababababababab\",\"valido_de\":\"2026-03-01\"},\"vigente\":true},{\"area_ha\":0.1,\"id\":\"RS-4300000-0011223344556677889900AABBCCDDEE\",\"limites\":[-53,-30,-52.99,-29.99],\"mod_fiscal\":null,\"municipio\":null,\"resultados\":[{\"analise\":\"desmatamento_eudr\",\"detalhes\":[],\"fatos\":{\"alertas\":[]},\"resumo\":\"Sem alerta depois do corte\",\"status\":\"conforme\"}],\"sal\":\"4444444444444444444444444444444444444444444444444444444444444444\",\"situacao\":\"PE\",\"status\":\"conforme\",\"tipo\":\"imovel\",\"uf\":\"RS\",\"versao_car\":{\"hash\":\"cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"valido_de\":\"2025-01-15\"},\"vigente\":false}]}",
+  "itens": [
+   {
+    "tipo": "cabecalho",
+    "id": "cabecalho",
+    "formato": "NT_RELATORIO/1",
+    "relatorio": "NT-2026-000002",
+    "serie": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "numero": 2,
+    "emitido_em": "2026-10-22T14:03:07Z",
+    "emissor": null,
+    "regras": {
+     "versao": "2026.1",
+     "parametros": {
+      "corte_eudr": "2020-12-31",
+      "area_min_alerta_ha": 1.0
+     }
+    },
+    "bases": [
+     {
+      "fonte": "sicar",
+      "nome": "SICAR · Área do Imóvel",
+      "uf": "RS",
+      "versao": null,
+      "dados_ate": "2026-09-30",
+      "publicado_em": null,
+      "carregado_em": "2026-10-09T21:00:00Z"
+     }
+    ],
+    "analises": [
+     {
+      "id": "desmatamento_eudr",
+      "nome": "Desmatamento após o corte da EUDR",
+      "descricao": "Alertas do MapBiomas…",
+      "base": "MapBiomas Alerta (alertas detectados até 15/09/2026)"
+     }
+    ],
+    "substitui": {
+     "relatorio": "NT-2026-000001",
+     "numero": 1,
+     "motivo": "Área do alerta corrigida após revisão da interseção"
+    }
+   },
+   {
+    "tipo": "resumo",
+    "id": "resumo",
+    "sal": "2222222222222222222222222222222222222222222222222222222222222222",
+    "status": "nao_conforme",
+    "contagem": {
+     "conforme": 1,
+     "pendente": 0,
+     "atencao": 0,
+     "nao_conforme": 1
+    },
+    "imoveis": 2
+   },
+   {
+    "tipo": "imovel",
+    "id": "RS-4300000-B2C3D4E5F60718293A4B5C6D7E8F9012",
+    "sal": "3333333333333333333333333333333333333333333333333333333333333333",
+    "uf": "RS",
+    "municipio": "São José dos Ausentes",
+    "area_ha": 1234.5678,
+    "mod_fiscal": 61.72,
+    "situacao": "AT",
+    "vigente": true,
+    "versao_car": {
+     "valido_de": "2026-03-01",
+     "hash": "abababababababababababababababababababababababababababababababab"
+    },
+    "limites": [
+     -50.1,
+     -28.9,
+     -50.0,
+     -28.8
+    ],
+    "status": "nao_conforme",
+    "resultados": [
+     {
+      "analise": "desmatamento_eudr",
+      "status": "nao_conforme",
+      "resumo": "1 alerta depois do corte: 3,1 ha",
+      "detalhes": [
+       "Alerta nº 1234567: 3,1 ha no imóvel"
+      ],
+      "fatos": {
+       "alertas": [
+        {
+         "alerta": "1234567",
+         "detectado_em": "2023-05-14",
+         "area_ha": 3.0999999999999996,
+         "area_alerta_ha": 12.5,
+         "classe": null,
+         "fontes": [
+          "SENTINEL-2"
+         ],
+         "pos_corte": true
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "tipo": "imovel",
+    "id": "RS-4300000-0011223344556677889900AABBCCDDEE",
+    "sal": "4444444444444444444444444444444444444444444444444444444444444444",
+    "uf": "RS",
+    "municipio": null,
+    "area_ha": 0.1,
+    "mod_fiscal": null,
+    "situacao": "PE",
+    "vigente": false,
+    "versao_car": {
+     "valido_de": "2025-01-15",
+     "hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+    },
+    "limites": [
+     -53.0,
+     -30.0,
+     -52.99,
+     -29.99
+    ],
+    "status": "conforme",
+    "resultados": [
+     {
+      "analise": "desmatamento_eudr",
+      "status": "conforme",
+      "resumo": "Sem alerta depois do corte",
+      "detalhes": [],
+      "fatos": {
+       "alertas": []
+      }
+     }
+    ]
+   }
+  ],
+  "ordem": [
+   [
+    "cabecalho",
+    "cabecalho"
+   ],
+   [
+    "imovel",
+    "RS-4300000-0011223344556677889900AABBCCDDEE"
+   ],
+   [
+    "imovel",
+    "RS-4300000-B2C3D4E5F60718293A4B5C6D7E8F9012"
+   ],
+   [
+    "resumo",
+    "resumo"
+   ]
+  ],
+  "jcs": [
+   "{\"analises\":[{\"base\":\"MapBiomas Alerta (alertas detectados até 15/09/2026)\",\"descricao\":\"Alertas do MapBiomas…\",\"id\":\"desmatamento_eudr\",\"nome\":\"Desmatamento após o corte da EUDR\"}],\"bases\":[{\"carregado_em\":\"2026-10-09T21:00:00Z\",\"dados_ate\":\"2026-09-30\",\"fonte\":\"sicar\",\"nome\":\"SICAR · Área do Imóvel\",\"publicado_em\":null,\"uf\":\"RS\",\"versao\":null}],\"emissor\":null,\"emitido_em\":\"2026-10-22T14:03:07Z\",\"formato\":\"NT_RELATORIO/1\",\"id\":\"cabecalho\",\"numero\":2,\"regras\":{\"parametros\":{\"area_min_alerta_ha\":1,\"corte_eudr\":\"2020-12-31\"},\"versao\":\"2026.1\"},\"relatorio\":\"NT-2026-000002\",\"serie\":\"7c9e6679-7425-40de-944b-e07fc1f90ae7\",\"substitui\":{\"motivo\":\"Área do alerta corrigida após revisão da interseção\",\"numero\":1,\"relatorio\":\"NT-2026-000001\"},\"tipo\":\"cabecalho\"}",
+   "{\"area_ha\":0.1,\"id\":\"RS-4300000-0011223344556677889900AABBCCDDEE\",\"limites\":[-53,-30,-52.99,-29.99],\"mod_fiscal\":null,\"municipio\":null,\"resultados\":[{\"analise\":\"desmatamento_eudr\",\"detalhes\":[],\"fatos\":{\"alertas\":[]},\"resumo\":\"Sem alerta depois do corte\",\"status\":\"conforme\"}],\"sal\":\"4444444444444444444444444444444444444444444444444444444444444444\",\"situacao\":\"PE\",\"status\":\"conforme\",\"tipo\":\"imovel\",\"uf\":\"RS\",\"versao_car\":{\"hash\":\"cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"valido_de\":\"2025-01-15\"},\"vigente\":false}",
+   "{\"area_ha\":1234.5678,\"id\":\"RS-4300000-B2C3D4E5F60718293A4B5C6D7E8F9012\",\"limites\":[-50.1,-28.9,-50,-28.8],\"mod_fiscal\":61.72,\"municipio\":\"São José dos Ausentes\",\"resultados\":[{\"analise\":\"desmatamento_eudr\",\"detalhes\":[\"Alerta nº 1234567: 3,1 ha no imóvel\"],\"fatos\":{\"alertas\":[{\"alerta\":\"1234567\",\"area_alerta_ha\":12.5,\"area_ha\":3.0999999999999996,\"classe\":null,\"detectado_em\":\"2023-05-14\",\"fontes\":[\"SENTINEL-2\"],\"pos_corte\":true}]},\"resumo\":\"1 alerta depois do corte: 3,1 ha\",\"status\":\"nao_conforme\"}],\"sal\":\"3333333333333333333333333333333333333333333333333333333333333333\",\"situacao\":\"AT\",\"status\":\"nao_conforme\",\"tipo\":\"imovel\",\"uf\":\"RS\",\"versao_car\":{\"hash\":\"abababababababababababababababababababababababababababababababab\",\"valido_de\":\"2026-03-01\"},\"vigente\":true}",
+   "{\"contagem\":{\"atencao\":0,\"conforme\":1,\"nao_conforme\":1,\"pendente\":0},\"id\":\"resumo\",\"imoveis\":2,\"sal\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"status\":\"nao_conforme\",\"tipo\":\"resumo\"}"
+  ],
+  "folhas": [
+   "ddaf6b78f58c809695d5e75ef430e0a0c89e45dc8ae365ccaa34fe9946a35866",
+   "edaaf3156fc629b26d9236182cb97e52923e87d8307cae7187510561ab3bf57c",
+   "9d80d872bf026eae18ec1afe45f0f8f2b040396b5ca84975c90398c731b576f7",
+   "f9e5556e121e7060ca8538cc885922b3845854b7dfaa1dbdcb24046e36f71547"
+  ],
+  "raiz": "522350146de4ac4c8663bbb5b57319c71bcbb72560d52471c3ca9af56da9fc7c",
+  "provas": {
+   "cabecalho:cabecalho": [
+    {
+     "lado": "direita",
+     "hash": "edaaf3156fc629b26d9236182cb97e52923e87d8307cae7187510561ab3bf57c"
+    },
+    {
+     "lado": "direita",
+     "hash": "b0ab61e6b76c4a96b835a67fd7e6ea47b5f3efa260bf235721d5747a785c8e71"
+    }
+   ],
+   "resumo:resumo": [
+    {
+     "lado": "esquerda",
+     "hash": "9d80d872bf026eae18ec1afe45f0f8f2b040396b5ca84975c90398c731b576f7"
+    },
+    {
+     "lado": "esquerda",
+     "hash": "70a1304347af1ed6c6b5b94843c5350737d6b103c2d5dee60e40c69320918caf"
+    }
+   ],
+   "imovel:RS-4300000-B2C3D4E5F60718293A4B5C6D7E8F9012": [
+    {
+     "lado": "direita",
+     "hash": "f9e5556e121e7060ca8538cc885922b3845854b7dfaa1dbdcb24046e36f71547"
+    },
+    {
+     "lado": "esquerda",
+     "hash": "70a1304347af1ed6c6b5b94843c5350737d6b103c2d5dee60e40c69320918caf"
+    }
+   ],
+   "imovel:RS-4300000-0011223344556677889900AABBCCDDEE": [
+    {
+     "lado": "esquerda",
+     "hash": "ddaf6b78f58c809695d5e75ef430e0a0c89e45dc8ae365ccaa34fe9946a35866"
+    },
+    {
+     "lado": "direita",
+     "hash": "b0ab61e6b76c4a96b835a67fd7e6ea47b5f3efa260bf235721d5747a785c8e71"
+    }
+   ]
+  },
+  "nonce": "6cb8c8a860dc754b30ff867cea27f05968a65f1f06e48e1e57f7e05378504242",
+  "campos": {
+   "root": "522350146de4ac4c8663bbb5b57319c71bcbb72560d52471c3ca9af56da9fc7c",
+   "series": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+   "number": 2,
+   "issued_at": 1792677787,
+   "ruleset": "2026.1",
+   "replaces": 1
+  },
+  "dados_sas": "20000000522350146de4ac4c8663bbb5b57319c71bcbb72560d52471c3ca9af56da9fc7c2400000037633965363637392d373432352d343064652d393434622d653037666331663930616537020000009b17da6a0000000006000000323032362e3101000000",
+  "pdas": {
+   "autoridade": "US517G5965aydkZ46HS38QLi7UQiSojurfbQfKCELFx",
+   "credencial": "DvDPymsDnXVTCyrjP4vcsu3ZD1CUN1HQQsdCWiKkpUk8",
+   "schema": "FYaXfhN8FPNnyUwUeoKCwagW7gs7JUg4sAeVnG8LVBBg",
+   "conta": "J3EaPC93K85HiRyGuuPV2Dh2MHKR3ZENKgYJrsj8vjpM"
+  }
+ }
+}
